@@ -1,0 +1,24 @@
+.message {
+    width: 40vw;
+    padding: 10px 5px;
+    background-color: green;
+    margin: 5px 5px;
+    border-radius: 10px;
+    z-index: 10;
+    position: absolute;
+}
+
+.AllMessages {
+    display: flex;
+    width: 80%;
+}
+
+#message0 {
+    left: 20px;
+    top: 0;
+}
+
+#message1 {
+    right: 20px;
+    top: 50;
+}
