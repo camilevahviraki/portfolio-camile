@@ -1,24 +1,52 @@
 .message {
-    width: 40vw;
+    max-width: 40vw;
     padding: 10px 5px;
     background-color: green;
     margin: 5px 5px;
     border-radius: 10px;
     z-index: 10;
     position: absolute;
+    display: flex;
 }
 
 .AllMessages {
     display: flex;
+    flex-direction: column;
     width: 80%;
 }
 
-#message0 {
+.message0 {
+    top: 30px;
     left: 20px;
-    top: 0;
+    background-color: rgba(182, 199, 191, 0.622);
 }
 
-#message1 {
+.message1 {
+    top: 100px;
     right: 20px;
-    top: 50;
+    background-color: rgba(12, 123, 192, 0.622);
+}
+
+.message2 {
+    top: 170px;
+    left: 20px;
+    background-color: rgba(182, 199, 191, 0.622);
+}
+
+.message3 {
+    top: 240px;
+    right: 20px;
+    background-color: rgba(12, 123, 192, 0.622);
+}
+
+.typed-cursor--blink {
+    display: none;
+} 
+
+.video-container {
+    position: relative;
+    width: 84%;
+    margin-left: 8%;
+    padding-bottom: 150px;
+    border-bottom: 1px solid black;
 }

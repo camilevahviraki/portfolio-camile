@@ -1,26 +1,27 @@
 import React from 'react';
+import Typed from 'react-typed';
 import '../styles/wrapChats.css';
 
 export default function TryAsync() {
   const Chats = [
     {
-      message: 'Note that the development build is not optimized.To create a production build 1',
+      message: '',
       id: 0,
     },
     {
-      message: 'Note that the development build is not optimized.To create a production build 2',
+      message: 'Hello I’m a software developer!',
       id: 1,
     },
     {
-      message: 'Note that the development build is not optimized.To create a production build 3',
+      message: 'I can help you build a product , feature or website',
       id: 2,
     },
     {
-      message: 'Note that the development build is not optimized.To create a production build 4',
+      message: 'Look through some of my work and experience!',
       id: 3,
     },
     {
-      message: 'Note that the development build is not optimized.To create a production build 5',
+      message: 'If you like what you see and have a project you need coded',
       id: 3,
     },
   ];
@@ -37,7 +38,7 @@ export default function TryAsync() {
   React.useEffect(() => {
     (async function () {
       for (const el of array) {
-        await delay(5000);
+        await delay(6000);
         setDisplayEl(el);
       }
       setDisplayEl(undefined);
@@ -50,23 +51,15 @@ export default function TryAsync() {
 
   return (
     <div className="AllMessages">
-      <h1>Wellcome to my portfolio</h1>
       {displayArray.map((elem, key) => (
-        <div key={key} id={`message${key}`} className="message">
-          Number:
-          {elem.message}
-        </div>
+        <Typed
+          className={`message message${key}`}
+          key={key}
+          strings={['...', elem.message]}
+          typeSpeed={100}
+          backSpeed={50}
+        />
       ))}
     </div>
   );
 }
-
-// {
-// "name":"value",
-// "picture":"value",
-// "shortDescription":"value",
-// "longDescription":"value",
-// "liveLink":"value",
-// "codeLink":"value",
-// "id":"value",
-//     }

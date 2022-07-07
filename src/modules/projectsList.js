@@ -1,5 +1,21 @@
 const projectsList = [
   {
+    title: 'Car\'s App',
+    pictureUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFr--HJ02oKjHtpzwds6HgQWJV28R_3Cuy3A&usqp=CAU',
+    urlScreenSht:
+          'https://github.com/camilevahviraki/Vehicles-recipe/blob/dev/public/mobile-black(1).png?raw=true',
+    shortDescription:
+          'Is an application about the technical characteristics of the world\'s best car brands from Acura to Volvo with detailed specifications, technical data',
+    urlPic2: 'https://github.com/camilevahviraki/Vehicles-recipe/blob/dev/public/mobile-black(2).png?raw=true',
+    releasesDate: '23 Jun 2022',
+    longDescription:
+          'Welcome to the Complete Catalog of Cars manufactured worldwide since 1990 - a car specs database, hundreds of thousands cars with specifications based on ProfessCars™ software and detailed technical parameters of each car',
+    liveLink: 'https://vehicles-cathalogue.netlify.app/',
+    codeLink: 'https://github.com/camilevahviraki/Vehicles-recipe',
+    built: 'React/Redux',
+  },
+  {
     title: 'Leader board',
     pictureUrl:
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7UUxWa9nOKUDJS5eBTRcHGjB64brlP6Q-Tw&usqp=CAU',
@@ -71,7 +87,7 @@ const projectsList = [
     urlScreenSht:
       'https://github.com/camilevahviraki/Capstone-javascript/blob/dev/src/icons/desktop(3).png?raw=true',
     shortDescription:
-      'The Top Movies is an amazing app that show the list of top movies and series',  
+      'The Top Movies is an amazing app that show the list of top movies and series',
     longDescription:
       'The Top Movies is an amazing app that show the list of top movies and series. You can like the movie or/and add the comments.',
     liveLink: 'https://camilevahviraki.github.io/Capstone-javascript/',

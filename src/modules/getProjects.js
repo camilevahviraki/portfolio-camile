@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
+// import { useDispatch} from 'react-redux';
 import projectsList from './projectsList';
 import '../styles/getProjects.css';
+import codeIcon from '../images/GithubPopUp.png';
+import liveIcon from '../images/IconLivePopUp.png';
 
 function GetProjects() {
   const [projectData] = useState(projectsList);
   const [indexImg, setIndexImg] = useState(0);
   const [popUpData, setPopUpData] = useState({});
   const [showed, setShowed] = useState(true);
-
-  //   useEffect(() => {
-  //     axios.get(`https://camilux-portfolio-server.herokuapp.com/getAllProjects`)
-  //     .then(res => {
-  //       const projects = res.data.projects;
-  //       console.log(projects)
-  //       setAllProjects(projects);
-  //       setProjectsData(projects);
-  //     });
-  //   },[])
 
   const PopUp = (index) => {
     const { title } = projectData[index];
@@ -73,9 +66,20 @@ function GetProjects() {
     }
     return popUpData.imagesArrayR[indexImg];
   };
+
+  const style1 = {
+    filter: 'blur(8px)',
+    pointerEvents: 'none',
+  };
+  const style2 = {
+    filter: 'none',
+  };
   return (
-    <div className="getProjects">
-      {
+    <section className="mainProjectList" id="projects">
+      <div style={showed ? style2 : style1}>
+        <h2 className="my_works_title">My Recents Works</h2>
+        <div className="getProjects">
+          {
         projectData.map((project, key) => {
           const assignColor = () => {
             if (key % 2 === 0) {
@@ -90,42 +94,63 @@ function GetProjects() {
           return (
             <div className="project" id={assignColor()}>
               <h3 className="title_card">{project.title}</h3>
-              <img src={project.pictureUrl} alt="" className="imgProject" />
+              <div className="img_container">
+                <img src={project.pictureUrl} alt="" className="imgProject" />
+              </div>
               <p className="short_description">{project.shortDescription}</p>
-              <a href={project.liveLink}>See live</a>
-              <a href={project.codeLink}>See project</a>
-              <button onClick={() => { PopUp(key); }} id={`buttonPop${key}`}>
+              <a href={project.liveLink} className="button_link">See live</a>
+              <a href={project.codeLink} className="button_link">See project</a>
+              <button
+                onClick={() => { PopUp(key); }}
+                id={`buttonPop${key}`}
+                className="button_details"
+              >
                 See details
               </button>
             </div>
           );
         })
         }
-      <div id="popUp" style={{ display: showed ? 'none' : 'block' }}>
-
-        <h2>
-          $
-          {popUpData.title}
-        </h2>
-        <button onClick={hidePopUp}>hidePopUp</button>
-        <img src={popUpImage()} className="imgPopUp" />
-        <button onClick={() => assignPopUpImg('left')}>See preview</button>
-        <button onClick={() => assignPopUpImg('right')}>See next</button>
-        <div className="divDescription">
-          <div className="description">
-            $
-            {popUpData.longDescription}
-          </div>
         </div>
-        <a href={popUpData.liveLink}>See live</a>
-        <a href={popUpData.codeLink}>See project</a>
-        <span>
-          posted on:
-          {popUpData.releasesDate}
-        </span>
+      </div>
+
+      <div id="popUp" style={{ display: showed ? 'none' : 'flex' }}>
+
+        <div className="ImageContainer">
+          <div className="titleAndButton">
+            <button onClick={hidePopUp} className="hidePopUp">X</button>
+            <h2 className="popUpTitle">
+              {popUpData.title}
+            </h2>
+          </div>
+
+          <div className="imgPopUpContainer">
+            <img src={popUpImage()} className="imgPopUp" />
+          </div>
+          <button className="imgBtn" onClick={() => assignPopUpImg('left')}>Prev</button>
+          <button className="imgBtn" onClick={() => assignPopUpImg('right')}>Next</button>
+        </div>
+        <div className="divDescription">
+          <p className="description">
+            {popUpData.longDescription}
+          </p>
+          <a href={popUpData.liveLink} className="codeLinks">
+            See live
+            <img src={codeIcon} alt="" />
+          </a>
+          <a href={popUpData.codeLink} className="codeLinks">
+            See project
+            <img src={liveIcon} alt="" />
+          </a>
+          <span id="date">
+            posted on:
+            {popUpData.releasesDate}
+          </span>
+        </div>
 
       </div>
-    </div>
+
+    </section>
   );
 }
 
