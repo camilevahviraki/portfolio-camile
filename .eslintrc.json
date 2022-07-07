@@ -27,6 +27,7 @@
       "react/self-closing-comp": "off",
       "react/prefer-stateless-function": "off",
       "react/no-access-state-in-setstate": "off",
+      "jsx-a11y/control-has-associated-label": "off",
       "no-shadow": "off"
     },
     "ignorePatterns": [
