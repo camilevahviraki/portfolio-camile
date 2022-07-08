@@ -15,7 +15,7 @@ function GetProjects() {
     const { title } = projectData[index];
     const { pictureUrl } = projectData[index];
     const { urlScreenSht } = projectData[index];
-    const { shortDescription } = projectData[index];
+    // const { shortDescription } = projectData[index];
     const { urlPic2 } = projectData[index];
     const { releasesDate } = projectData[index];
     const { longDescription } = projectData[index];
@@ -92,7 +92,7 @@ function GetProjects() {
             return 'pink';
           };
           return (
-            <div className="project" id={assignColor()}>
+            <div key={project.id} className="project" id={assignColor()}>
               <h3 className="title_card">{project.title}</h3>
               <div className="img_container">
                 <img src={project.pictureUrl} alt="" className="imgProject" />
@@ -104,6 +104,7 @@ function GetProjects() {
                 onClick={() => { PopUp(key); }}
                 id={`buttonPop${key}`}
                 className="button_details"
+                type="button"
               >
                 See details
               </button>
@@ -118,17 +119,29 @@ function GetProjects() {
 
         <div className="ImageContainer">
           <div className="titleAndButton">
-            <button onClick={hidePopUp} className="hidePopUp">X</button>
+            <button onClick={hidePopUp} className="hidePopUp" type="button">X</button>
             <h2 className="popUpTitle">
               {popUpData.title}
             </h2>
           </div>
 
           <div className="imgPopUpContainer">
-            <img src={popUpImage()} className="imgPopUp" />
+            <img src={popUpImage()} className="imgPopUp" alt="" />
           </div>
-          <button className="imgBtn" onClick={() => assignPopUpImg('left')}>Prev</button>
-          <button className="imgBtn" onClick={() => assignPopUpImg('right')}>Next</button>
+          <button
+            className="imgBtn"
+            onClick={() => assignPopUpImg('left')}
+            type="button"
+          >
+            Prev
+          </button>
+          <button
+            className="imgBtn"
+            onClick={() => assignPopUpImg('right')}
+            type="button"
+          >
+            Next
+          </button>
         </div>
         <div className="divDescription">
           <p className="description">
