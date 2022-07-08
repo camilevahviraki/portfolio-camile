@@ -1,8 +1,8 @@
-import { createStore, combineReducers } from 'redux';
-import popUpReducer from './popUp';
+// import { createStore, combineReducers } from 'redux';
+// import popUpReducer from './popUp';
 
-const rootReducer = combineReducers({ popUpReducer });
+// const rootReducer = combineReducers({ popUpReducer });
 
-const Store = createStore(rootReducer);
+// const Store = createStore(rootReducer);
 
-export default Store;
+// export default Store;

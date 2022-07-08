@@ -48,6 +48,13 @@ nav a:hover {
         display: none;
     }
 
+    header a {
+        margin-left: 8vw;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
     .hamburger {
         width: 20px;
         height: 16px;
@@ -55,8 +62,6 @@ nav a:hover {
         grid-template-columns: 1fr;
         gap: 10%;
         position: absolute;
-        top: 40px;
-        right: 10vw;
     }
 
     .hamburger div {

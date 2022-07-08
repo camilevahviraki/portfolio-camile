@@ -47,6 +47,6 @@
     position: relative;
     width: 84%;
     margin-left: 8%;
-    padding-bottom: 150px;
+    /* padding-bottom: 50px; */
     border-bottom: 1px solid black;
 }

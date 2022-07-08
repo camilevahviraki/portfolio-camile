@@ -188,6 +188,7 @@ p {
   border-bottom: 1px solid black;
   background-image: url(../images/projects_bg.jpeg);
   background-size: cover;
+  padding-top: 50px;
 }
 
 #popUp {
@@ -326,7 +327,6 @@ p {
   position: relative;
   width: 100vw;
   margin-left: 0;
-  padding-bottom: 150px;
   border-bottom: 1px solid black;
   overflow: hidden;
   height: 350px;

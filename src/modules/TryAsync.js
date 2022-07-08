@@ -1,3 +1,7 @@
+/* eslint-disable func-names */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-restricted-syntax */
 import React from 'react';
 import Typed from 'react-typed';
 import '../styles/wrapChats.css';
@@ -38,6 +42,7 @@ export default function TryAsync() {
   React.useEffect(() => {
     (async function () {
       for (const el of array) {
+        // eslint-disable-next-line no-await-in-loop
         await delay(6000);
         setDisplayEl(el);
       }
