@@ -7,6 +7,47 @@ import twitter from '../images/twitter.png';
 import Medium from '../images/medium.png';
 
 export default class Contact extends Component {
+  state = {
+    userName: '',
+    email: '',
+    text: '',
+    message: '',
+    disabled: false,
+  }
+
+  writeText = (e) => {
+    switch (e.target.name) {
+      case 'name':
+      {
+        return this.setState({ userName: e.target.value });
+      }
+      case 'mail':
+      {
+        return this.setState({ email: e.target.value });
+      }
+      case 'text_message':
+      {
+        return this.setState({ text: e.target.value });
+      }
+      default: return '';
+    }
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.email.length === 0
+      || this.state.text.length === 0
+      || this.state.userName.length === 0) {
+      this.setState({ message: 'Please complete all field!' });
+      this.setState({ disabled: true });
+    } if (!/\S+@\S+\.\S+/.test(this.state.email)) {
+      this.setState({ message: 'Please enter a valid mail!' });
+      this.setState({ disabled: false });
+    }
+    this.setState({ message: 'Well done!' });
+    this.setState({ disabled: false });
+  }
+
   render() {
     return (
       <div className="contact_container">
@@ -15,15 +56,27 @@ export default class Contact extends Component {
             I&apos;m always interested in hearing about new projects, so if you&apos;d like
             to chat please get in touch.
           </p>
-          <form id="form" action="https://formspree.io/f/xgedzqjv" method="POST">
-            <input type="text" name="name" placeholder="Full Name" />
-            <input type="mail" name="mail" placeholder="Email Adress" />
-            <textarea placeholder="Enter text here" name="text_message">
+          <form
+            id="form"
+            action="https://formspree.io/f/xgedzqjv"
+            method="POST"
+          >
+            <input type="text" name="name" placeholder="Full Name" onChange={this.writeText} />
+            <input type="mail" name="mail" placeholder="Email Adress" onChange={this.writeText} />
+            <textarea placeholder="Enter text here" name="text_message" onChange={this.writeText}>
 
             </textarea>
-            <div class="wrap">
-                   <button class="button">Get in touch</button>
+            <div className="wrap">
+              <button
+                className="button"
+                type="button"
+                onClick={this.handleSubmit}
+                disabled={this.state.disabled}
+              >
+                Get in touch
+              </button>
             </div>
+            <p>{this.state.message}</p>
           </form>
 
         </div>
