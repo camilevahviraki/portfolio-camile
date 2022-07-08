@@ -58,14 +58,21 @@ nav a:hover {
   .hamburger {
     width: 20px;
     height: 16px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10%;
     position: absolute;
   }
 
-  .hamburger div {
-    background-color: white;
+  .child_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10%;
+    z-index: 10;
+  }
+
+  .child_container div {
+    background-color: rgb(176, 173, 173);
     border-radius: 2px;
   }
 
@@ -76,19 +83,31 @@ nav a:hover {
     grid-template-columns: 1fr;
     gap: 10%;
     position: absolute;
-    top: 40px;
-    right: 10vw;
+    top: 20px;
     z-index: 10;
   }
 
-  .hideMenu div {
-    background-color: rgb(0, 126, 251);
+  .hideMenu .child_container div {
+    background-color: rgb(161, 157, 157);
     border-radius: 2px;
+    height: 4px;
   }
 
-  /* .hideMenu #child1 {
-    transform: rotate(45);
-  } */
+  .hideMenu #child1 {
+    transform: rotate(45deg);
+    width: 20px;
+    position: fixed;
+  }
+
+  .hideMenu #child3 {
+    transform: rotate(315deg);
+    width: 20px;
+    position: fixed;
+  }
+
+  .hideMenu #child2 {
+    display: none;
+  }
 
   .menu {
     position: fixed;
@@ -96,5 +115,18 @@ nav a:hover {
     height: 80vh;
     background-color: rgb(37, 37, 37);
     left: 0;
+    flex-direction: column;
+    text-align: start;
+    padding-left: 0;
+    top: 0;
+  }
+
+  .menu li {
+    list-style-type: none;
+    margin: 20px;
+  }
+
+  .menu li a {
+    font-size: 20px;
   }
 }

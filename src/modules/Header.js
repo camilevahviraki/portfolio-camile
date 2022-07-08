@@ -28,9 +28,11 @@ export default class Header extends Component {
               className={this.state.showNav ? 'hideMenu' : 'hamburger'}
               onClick={() => this.setState({ showNav: !this.state.showNav })}
             >
-              <div id="child1" />
-              <div id="child2" />
-              <div id="child3" />
+              <div className="child_container">
+                <div id="child1" />
+                <div id="child2" />
+                <div id="child3" />
+              </div>
             </div>
             <ul className="menu" style={this.state.showNav ? { display: 'flex' } : { display: 'none' }}>
               <li>
