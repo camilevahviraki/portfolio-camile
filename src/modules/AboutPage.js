@@ -11,7 +11,11 @@ function AboutPage() {
         like what you see and have a project you need coded, don’t hestiate to
         contact me.
       </p>
-      <a href="">Get My Resume</a>
+      <a
+        href="https://docs.google.com/document/d/1fiN2eD6C9BD4FIiMxHf-9ER3448XcZ1LYR9Wd_tjvQw/edit?usp=sharing"
+      >
+        Get My Resume
+      </a>
       <div className="skills">
         <ul>
           <li><h3 className="skills_h3">Languages</h3></li>
