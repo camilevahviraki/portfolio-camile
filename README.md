@@ -24,7 +24,9 @@ To get a local copy up and running follow these simple example steps.
 You can also type [this Link](https://camilevahviraki.github.io/Portfolio/) to see 
 the live demo of my personnal Portfolio.
 
+## Live link
 
+[Open the live demo](https://portfolio-camile.netlify.app/) of my portfolio
 
 ## Authors
 
