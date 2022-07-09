@@ -9,24 +9,28 @@ import '../styles/wrapChats.css';
 export default function TryAsync() {
   const Chats = [
     {
-      message: '',
+      message: 'Hello there!',
       id: 0,
     },
     {
-      message: 'Hello I’m a software developer!',
+      message: 'Hello,',
       id: 1,
     },
     {
-      message: 'I can help you build a product , feature or website',
+      message: 'I’m a software developer',
       id: 2,
     },
     {
-      message: 'Look through some of my work and experience!',
+      message: 'I can help you build a product , feature or website',
       id: 3,
     },
     {
+      message: 'Look through some of my work and experience',
+      id: 4,
+    },
+    {
       message: 'If you like what you see and have a project you need coded',
-      id: 3,
+      id: 5,
     },
   ];
   const [array] = React.useState(Chats);

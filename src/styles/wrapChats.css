@@ -1,12 +1,13 @@
 .message {
   max-width: 40vw;
-  padding: 10px 5px;
+  padding: 15px 5px;
   background-color: green;
   margin: 5px 5px;
-  border-radius: 10px;
+  border-radius: 17px;
   z-index: 7;
   position: absolute;
   display: flex;
+  color: #fff;
 }
 
 .AllMessages {
@@ -17,26 +18,37 @@
 
 .message0 {
   top: 30px;
-  left: 20px;
-  background-color: rgba(182, 199, 191, 0.622);
+  left: 10%;
+  background-color: rgba(48, 48, 48, 0.777);
+  border-top-left-radius: 0;
 }
 
 .message1 {
   top: 100px;
-  right: 20px;
-  background-color: rgba(12, 123, 192, 0.622);
+  right: 10%;
+  background-color: rgba(17, 126, 194, 0.862);
+  border-bottom-right-radius: 0;
 }
 
 .message2 {
   top: 170px;
-  left: 20px;
-  background-color: rgba(182, 199, 191, 0.622);
+  left: 10%;
+  background-color: rgba(48, 48, 48, 0.777);
+  border-top-left-radius: 0;
 }
 
 .message3 {
   top: 240px;
-  right: 20px;
-  background-color: rgba(12, 123, 192, 0.622);
+  right: 10%;
+  background-color: rgba(17, 126, 194, 0.862);
+  border-bottom-right-radius: 0;
+}
+
+.message4 {
+  top: 290px;
+  left: 10%;
+  background-color: rgba(48, 48, 48, 0.777);
+  border-top-left-radius: 0;
 }
 
 .typed-cursor--blink {
@@ -45,9 +57,14 @@
 
 .video-container {
   position: relative;
-  width: 84%;
-  margin-left: 8%;
+  width: 100%;
+  margin: 0;
+
+  /* width: 84%; */
+
+  /* margin-left: 8%; */
 
   /* padding-bottom: 50px; */
   border-bottom: 1px solid black;
+  background: linear-gradient(#101010, #fff);
 }

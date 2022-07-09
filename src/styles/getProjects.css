@@ -115,8 +115,9 @@
 
 .title_card {
   color: rgb(2, 46, 54);
-  font-family: 'Rubik Moonrocks', cursive, sans-serif;
   font-size: 25px;
+  font-family: Poppins, cursive, sans-serif;
+  font-weight: 700;
 }
 
 .short_description {
@@ -346,6 +347,21 @@ p {
   font-size: 20px;
   font-weight: 900;
   border: none;
+}
+
+.hidePopUp::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 6px solid #00ffcb;
+
+  /* position: absolute; */
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
 }
 
 @media screen and (max-width: 767px) {
