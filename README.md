@@ -26,7 +26,13 @@ the live demo of my personnal Portfolio.
 
 ## Live link
 
-[Open the live demo](https://portfolio-camile.netlify.app/) of my portfolio
+### Netlify
+
+[Open the live demo](https://portfolio-camile.netlify.app/)
+
+### Heroku
+
+[Open the live demo](https://portfolio-camile.herokuapp.com/)
 
 ## Authors
 
