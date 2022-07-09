@@ -1,0 +1,79 @@
+.about_title {
+  font-size: 30px;
+  width: 60%;
+  text-align: start;
+  margin-left: 10%;
+  color: #f70;
+  margin-top: 40px;
+}
+
+.about p {
+  width: 60%;
+  text-align: start;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+.about a {
+  text-align: start;
+  padding: 10px;
+  border: 1px solid rgb(1, 20, 50);
+  background-color: rgb(0, 255, 229);
+  color: rgb(1, 27, 34);
+  text-decoration: none;
+  margin-left: 10%;
+  font-weight: 600;
+}
+
+.about {
+  text-align: start;
+  padding-bottom: 100px;
+  border-bottom: 1px solid black;
+  background-image: url(../images/black_image.jpeg);
+  background-size: cover;
+  color: white;
+  padding-top: 50px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  width: 86%;
+  margin-left: 8%;
+}
+
+.skills_h3 {
+  color: #f70;
+}
+
+.skills ul {
+  width: 30%;
+}
+
+.skills ul li {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 767px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    margin-left: 8%;
+  }
+
+  .about {
+    text-align: start;
+    padding-bottom: 100px;
+    border-bottom: 1px solid black;
+    background-image: url(../images/background_intro.jpg);
+    background-size: cover;
+    color: white;
+  }
+
+  .about p {
+    width: 86%;
+    text-align: start;
+    margin-left: 7%;
+  }
+}

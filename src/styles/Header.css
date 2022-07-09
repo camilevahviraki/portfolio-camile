@@ -1,0 +1,132 @@
+header {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  background-color: rgb(30, 37, 42);
+  z-index: 8;
+}
+
+nav {
+  position: absolute;
+  right: 100px;
+}
+
+header a {
+  margin-left: 100px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: rgb(71, 249, 255);
+  font-weight: 600;
+  padding: 10px;
+  border: 1px solid rgb(71, 249, 255);
+}
+
+.mobile_header {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile_header {
+    display: flex;
+  }
+
+  .pc_header {
+    display: none;
+  }
+
+  header a {
+    margin-left: 8vw;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hamburger {
+    width: 20px;
+    height: 16px;
+    position: absolute;
+  }
+
+  .child_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10%;
+    z-index: 10;
+  }
+
+  .child_container div {
+    background-color: rgb(176, 173, 173);
+    border-radius: 2px;
+  }
+
+  .hideMenu {
+    width: 20px;
+    height: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10%;
+    position: absolute;
+    top: 20px;
+    z-index: 10;
+  }
+
+  .hideMenu .child_container div {
+    background-color: rgb(161, 157, 157);
+    border-radius: 2px;
+    height: 4px;
+  }
+
+  .hideMenu #child1 {
+    transform: rotate(45deg);
+    width: 20px;
+    position: fixed;
+  }
+
+  .hideMenu #child3 {
+    transform: rotate(315deg);
+    width: 20px;
+    position: fixed;
+  }
+
+  .hideMenu #child2 {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    width: 90vw;
+    height: 80vh;
+    background-color: rgb(37, 37, 37);
+    left: 0;
+    flex-direction: column;
+    text-align: start;
+    padding-left: 0;
+    top: 0;
+  }
+
+  .menu li {
+    list-style-type: none;
+    margin: 20px;
+  }
+
+  .menu li a {
+    font-size: 20px;
+  }
+}

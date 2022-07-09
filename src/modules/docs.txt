@@ -1,0 +1,3 @@
+https://uber.github.io/react-vis/
+
+https://alvarotrigo.com/blog/css-text-animations/
