@@ -1,3 +1,7 @@
+import eStoreImage from '../images/projects/background_intro.jpg';
+import eStoreLaptop from '../images/projects/laptop.png';
+import eStoredesktop from '../images/projects/desktop(3).png';
+
 const projectsList = [
   {
     id: 1,
@@ -18,20 +22,18 @@ const projectsList = [
   },
   {
     id: 2,
-    title: 'Math Magicians App',
-    pictureUrl:
-          'https://media.istockphoto.com/vectors/man-stands-at-a-huge-calculator-finance-and-investments-budgeting-vector-id1319517808?b=1&k=20&m=1319517808&s=170667a&w=0&h=vW5d3UuPriq4PExDJmcVSCD9UmxneC3h7U57EfuSIKc=',
-    urlScreenSht:
-          'https://github.com/camilevahviraki/Math-magician-App/blob/dev/public/desktop.png?raw=true',
+    title: 'E-store',
+    pictureUrl: eStoreImage,
+    urlScreenSht: eStoreLaptop,
     shortDescription:
-          'Don’t you just love how much your child has improved in adding, subtracting, multiplying and dividing? You never get tired of hearing, Can I do math? from your six year old, do you? Of course you don’t..',
-    urlPic2: 'https://github.com/camilevahviraki/Math-magician-App/blob/dev/public/Screenshot%20from%202022-05-29%2011-41-24.png?raw=true',
+          'A smart E-commerce website',
+    urlPic2: eStoredesktop,
     releasesDate: '15 April 2022',
     longDescription:
           'Don’t you just love how much your child has improved in adding, subtracting, multiplying and dividing? You never get tired of hearing, “Can I do math?” from your six year old, do you? Of course you don’t. Thanks to Math Magic, your child can get a big jump on learning arithmetic while loving every second of that education. Math Magic teaches in a way that is encouraging and tons of fun for your little one.',
-    liveLink: 'https://camilevahviraki.github.io/Math-magician-App/',
-    codeLink: 'https://github.com/camilevahviraki/Math-magician-App',
-    built: 'HTML/CSS/React/',
+    liveLink: 'https://scandi-e-store.netlify.app/',
+    codeLink: 'https://github.com/camilevahviraki/scandi-e-store',
+    built: 'HTML/CSS/React/Redux',
   },
   {
     id: 3,
