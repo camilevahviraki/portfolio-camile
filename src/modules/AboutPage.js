@@ -12,7 +12,8 @@ function AboutPage() {
         contact me.
       </p>
       <a
-        href="https://docs.google.com/document/d/1fiN2eD6C9BD4FIiMxHf-9ER3448XcZ1LYR9Wd_tjvQw/edit?usp=sharing"
+        href="./documents/camile's CV.pdf"
+        download="camile's CV.pdf"
       >
         Get My Resume
       </a>
