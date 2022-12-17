@@ -28,10 +28,6 @@ export default function TryAsync() {
       message: 'Look through some of my work and experience',
       id: 4,
     },
-    {
-      message: 'If you like what you see and have a project you need coded',
-      id: 5,
-    },
   ];
   const [array] = React.useState(Chats);
   const [displayArray, setDisplayArray] = React.useState([]);

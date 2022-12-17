@@ -349,21 +349,6 @@ p {
   border: none;
 }
 
-.hidePopUp::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 6px solid #00ffcb;
-
-  /* position: absolute; */
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-}
-
 @media screen and (max-width: 767px) {
   .getProjects {
     display: flex;

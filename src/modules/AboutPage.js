@@ -6,7 +6,7 @@ function AboutPage() {
     <section className="about" id="about">
       <h2 className="about_title">About me</h2>
       <p>
-        Hello I’m a software developer! I can help you build a product ,
+        Hello I’am a software developer! I can help you build a product ,
         feature or website Look through some of my work and experience! If you
         like what you see and have a project you need coded, don’t hestiate to
         contact me.

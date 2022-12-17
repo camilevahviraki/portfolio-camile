@@ -28,9 +28,9 @@ const projectsList = [
     shortDescription:
           'A smart E-commerce website',
     urlPic2: eStoredesktop,
-    releasesDate: '15 April 2022',
+    releasesDate: '15th August 2022',
     longDescription:
-          'Don’t you just love how much your child has improved in adding, subtracting, multiplying and dividing? You never get tired of hearing, “Can I do math?” from your six year old, do you? Of course you don’t. Thanks to Math Magic, your child can get a big jump on learning arithmetic while loving every second of that education. Math Magic teaches in a way that is encouraging and tons of fun for your little one.',
+          'An online store with all the tools you need to build, manage, and grow your business. Ecwid store in minutes with shipping, tax, payment, advertising options ready. Always Free Plan. Lightning Fast. Seamless Upgrades. Existing Site Integration. Mirror On Multiple Sites.',
     liveLink: 'https://scandi-e-store.netlify.app/',
     codeLink: 'https://github.com/camilevahviraki/scandi-e-store',
     built: 'HTML/CSS/React/Redux',
@@ -60,7 +60,7 @@ const projectsList = [
     urlScreenSht:
       'https://raw.githubusercontent.com/camilevahviraki/Book-store/dev/public/desktop(3).png',
     shortDescription:
-      'The book store is a sample app that allows users to store their books so they can be visible by everyone.',
+      'The book store is an app that allows users to store their books so they can be visible by everyone.The users can delete their books or edit them.',
     urlPic2: '',
     releasesDate: '1 Jun 2022',
     longDescription:
@@ -97,7 +97,7 @@ const projectsList = [
     shortDescription:
       'The Top Movies is an amazing app that show the list of top movies and series',
     longDescription:
-      'The Top Movies is an amazing app that show the list of top movies and series. You can like the movie or/and add the comments.',
+      'The Top Movies is an amazing app that shows the list of top movies and series. You can like the movie or/and add to the comments section.',
     liveLink: 'https://camilevahviraki.github.io/Capstone-javascript/',
     codeLink: 'https://github.com/camilevahviraki/Capstone-javascript',
     built: 'HTML/CSS/Javascript/Webpack',

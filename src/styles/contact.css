@@ -95,12 +95,12 @@
   transform: translateY(-6px);
 }
 
-button:hover::before,
-button:focus::before {
+.button:hover::before,
+.button:focus::before {
   opacity: 1;
 }
 
-button::after {
+.button::after {
   content: '';
   width: 30px;
   height: 30px;
@@ -114,8 +114,8 @@ button::after {
   animation: ring 1.5s infinite;
 }
 
-button:hover::after,
-button:focus::after {
+.button:hover::after,
+.button:focus::after {
   animation: none;
   display: none;
 }

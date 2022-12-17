@@ -98,8 +98,8 @@ function GetProjects() {
                 <img src={project.pictureUrl} alt="" className="imgProject" />
               </div>
               <p className="short_description">{project.shortDescription}</p>
-              <a href={project.liveLink} className="button_link">See live</a>
-              <a href={project.codeLink} className="button_link">See project</a>
+              <a href={project.liveLink} className="button_link" target="_blank" rel="noreferrer">See live</a>
+              <a href={project.codeLink} className="button_link" target="_blank" rel="noreferrer">See project</a>
               <button
                 onClick={() => { PopUp(key); }}
                 id={`buttonPop${key}`}
@@ -147,11 +147,11 @@ function GetProjects() {
           <p className="description">
             {popUpData.longDescription}
           </p>
-          <a href={popUpData.liveLink} className="codeLinks">
+          <a href={popUpData.liveLink} className="codeLinks" target="_blank" rel="noreferrer">
             See live
             <img src={codeIcon} alt="" />
           </a>
-          <a href={popUpData.codeLink} className="codeLinks">
+          <a href={popUpData.codeLink} className="codeLinks" target="_blank" rel="noreferrer">
             See project
             <img src={liveIcon} alt="" />
           </a>

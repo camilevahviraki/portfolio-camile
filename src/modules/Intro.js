@@ -15,7 +15,7 @@ export default class Intro extends Component {
           <h2 className="main_title">I&apos;m Camile</h2>
           <h3>I’am a Software Developer</h3>
           <p>
-            I can help you build a product , feature or website Look through some
+            I can help you build a product , feature or website. Look through some
             of my work and experience! If you like what you see and have a project
             you need coded, don’t hesitate to contact me.
           </p>
