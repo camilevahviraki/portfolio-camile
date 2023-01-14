@@ -12,8 +12,8 @@ function AboutPage() {
         contact me.
       </p>
       <a
-        href="./documents/camile's CV.pdf"
-        download="camile's CV.pdf"
+        href="./documents/CamileResume.pdf"
+        download="camile's Resume.pdf"
       >
         Get My Resume
       </a>
