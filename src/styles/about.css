@@ -18,11 +18,12 @@
   text-align: start;
   padding: 10px;
   border: 1px solid rgb(1, 20, 50);
-  background-color: rgb(0, 255, 229);
-  color: rgb(1, 27, 34);
+  background-color: #054657;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 10%;
   font-weight: 600;
+  border-radius: 5px;
 }
 
 .about {

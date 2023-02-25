@@ -5,6 +5,8 @@
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .project {
@@ -16,14 +18,14 @@
   padding: 10px;
   box-shadow: 5px 5px 20px #888;
   position: relative;
+  background-color: #ffffff;
 }
 
 .imgProject {
   height: 100%;
 }
 
-#blue {
-  /* background-color: #002D62; */
+/* #blue {
   background:
     conic-gradient(
       #edc800,
@@ -43,11 +45,10 @@
       #f3cf00,
       #ffe800
     );
-}
+} */
 
-#green {
-  /* background-color: rgb(3, 120, 44); */
-  background:
+/* #green {
+ background:
     conic-gradient(
       #d7d7d7,
       #c3c3c3,
@@ -66,10 +67,9 @@
       #ccc,
       #c6c6c6
     );
-}
+} */
 
-#purple {
-  /* background-color: rgb(130, 3, 135); */
+/* #purple {
   background:
     conic-gradient(
       #d95641,
@@ -89,9 +89,9 @@
       #b2453a,
       #d25645
     );
-}
+} */
 
-#pink {
+/* #pink {
   background:
     conic-gradient(
       #e6e9bf,
@@ -111,7 +111,7 @@
       #cbaea3,
       #d4b5ab
     );
-}
+} */
 
 .title_card {
   color: rgb(2, 46, 54);
@@ -131,7 +131,8 @@
 
 .button_link {
   padding: 10px;
-  background-color: rgb(4, 68, 132);
+  /* background-color: rgb(4, 68, 132); */
+  background-color: #054657;
   color: #fff;
   margin-right: 10px;
   border-radius: 5px;
@@ -141,15 +142,23 @@
   font-family: Lato, sans-serif;
 }
 
+.button_link:hover {
+  background-color: #054757bb;
+}
+
 .button_details {
   padding: 10px;
   color: #fff;
   font-weight: 700;
   border-radius: 5px;
-  background-color: #b2453a;
+  background-color: rgba(255, 119, 0, 0.788);
   border: none;
   font-size: 16px;
   font-family: Lato, sans-serif;
+}
+
+.button_details:hover {
+  background-color: rgba(255, 119, 0, 0.671);
 }
 
 .img_container {
