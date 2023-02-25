@@ -26,6 +26,10 @@
   border-radius: 5px;
 }
 
+.about a:hover {
+  background-color: #325057; 
+}
+
 .about {
   text-align: start;
   padding-bottom: 100px;
