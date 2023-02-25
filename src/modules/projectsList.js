@@ -2,6 +2,10 @@ import eStoreImage from '../images/projects/background_intro.jpg';
 import eStoreLaptop from '../images/projects/laptop.png';
 import eStoredesktop from '../images/projects/desktop(3).png';
 
+import bikeShop1 from '../images/projects/bike-shop1.png';
+import bikeShop2 from '../images/projects/bike-shop2.png';
+import bikeShop3 from '../images/projects/bike-shop3.png';
+
 const projectsList = [
   {
     id: 1,
@@ -37,20 +41,18 @@ const projectsList = [
   },
   {
     id: 3,
-    title: 'Leader board',
-    pictureUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7UUxWa9nOKUDJS5eBTRcHGjB64brlP6Q-Tw&usqp=CAU',
-    urlScreenSht:
-          'https://github.com/camilevahviraki/Math-magician-App/blob/dev/public/desktop.png?raw=true',
+    title: 'Bike Shop',
+    pictureUrl: bikeShop1,
+    urlScreenSht: bikeShop2,
     shortDescription:
-          ' Track points for competitions, sports and teams. Share the live results via link. No signup required.',
-    urlPic2: 'https://github.com/camilevahviraki/leader-board/blob/dev/src/images/leader-board.png?raw=true',
+          ' Bicycle shop with bikes, cycling apparel and accessories from all top brands',
+    urlPic2: bikeShop3,
     releasesDate: '1 April 2022',
     longDescription:
-          ' Track points for competitions, sports and teams. Share the live results via link. No signup required.Comes with a number of ready-made and professional looking themes. All themes are free and made to suit any scenario.',
-    liveLink: 'https://camilevahviraki.github.io/leader-board/',
-    codeLink: 'https://github.com/camilevahviraki/leader-board',
-    built: 'HTML/CSS/Webpack',
+          ' Purchase a new bike online? It\'s no longer unusual these days! Huge selection of goods and brands speaks in its favor. Good shops offer one-stop shopping for cycling acces­sories, spares and bike wear.',
+    liveLink: 'https://bike-shop-cmlx.netlify.app/',
+    codeLink: 'https://github.com/camilevahviraki/bike-shop-backend',
+    built: 'Ruby on Rails/React/Redux/Jwt',
   },
   {
     id: 4,
