@@ -1,0 +1,86 @@
+.image-slider-buttons-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.image-slider-buttons-wrapper div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.images-slider-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-next-image-left {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    cursor: pointer;
+    background-color: #27282c92;
+}
+
+.button-next-image-left img {
+    transform: rotate(270deg);
+    height: 30px;
+    filter: invert(100%);
+}
+
+.button-next-image-right {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    cursor: pointer;
+    background-color: #27282c92;
+}
+
+.button-next-image-right img {
+    transform: rotate(90deg);
+    height: 30px;
+    filter: invert(100%);
+}
+
+.button-next-image-right:hover {
+    background-color: #151618;
+}
+
+.button-next-image-left:hover {
+    background-color: #151618;
+}
+
+.image-slider-dots {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(50, 78, 78, 0.486);
+    border: 1px solid gray;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.current-dot {
+    width: 11px;
+    height: 11px;
+    background-color: aliceblue;
+    border: 1px solid rgb(11, 107, 107);
+}
+
+.image-sliders-dots-wrap {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.image-slider-video-wrap {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

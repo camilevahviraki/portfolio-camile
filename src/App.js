@@ -1,16 +1,20 @@
 import './App.css';
-import video1 from './video/background loop.mp4';
-import TryAsync from './modules/TryAsync';
-import GetProjects from './modules/getProjects';
-import AboutPage from './modules/AboutPage';
-import Contact from './modules/Contact';
-import Header from './modules/Header';
-import Intro from './modules/Intro';
+import Intro from './pages/about/Intro';
+import Projects from './pages/projects/projects';
+// import video1 from './video/background loop.mp4';
+// import TryAsync from './modules/TryAsync';
+// import GetProjects from './modules/getProjects';
+// import AboutPage from './modules/AboutPage';
+// import Contact from './modules/Contact';
+// import Header from './modules/Header';
+// import Intro from './modules/Intro';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Intro/>
+      <Projects/>
+      {/* <Header />
       <Intro />
       <div className="video-container">
         <TryAsync />
@@ -20,7 +24,7 @@ function App() {
       </div>
       <GetProjects />
       <AboutPage />
-      <Contact />
+      <Contact /> */}
     </div>
   );
 }

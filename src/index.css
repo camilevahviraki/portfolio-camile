@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;0,800;1,300&family=Oxygen:wght@300;400;700&display=swap');
+
 body {
   margin: 0;
   width: 100vw;
   font-family:
-    -apple-system,
+    'Open sans',
     BlinkMacSystemFont,
     'Segoe UI',
     'Roboto',
@@ -26,4 +28,9 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.icon {
+  width: 40px;
+  height: auto;
 }
