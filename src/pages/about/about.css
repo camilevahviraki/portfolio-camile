@@ -1,0 +1,101 @@
+.about-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #1c1e23;
+    text-align: start;
+}
+
+.about-me-paragraph {
+    color: #c6c4c4;
+    font-weight: 600;
+}
+
+.about-me-skills-container {
+    width: 40%;
+    margin-left: 10%;
+}
+
+.about-me-skills-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-languages-wrapp {
+    display: flex;
+    align-items: center;
+}
+
+.skill-wrapp {
+    width: 8vw;
+    height: 7vw;
+    border-radius: 8px;
+    margin-right: 8px;
+    text-align: center;
+    background-color: #27282c;
+}
+
+.skill-wrapp p {
+    color: #c9c9c9;
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.about-skills-title {
+    color: #d5d5d5;
+    font-size: 17px;
+    margin: 20px 0;
+}
+
+.skills-icon-wrapp {
+    width: 100%;
+    height: calc(100% - 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-icon-border {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ff77009a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-icon {
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+    width: auto;
+    margin: auto;
+    justify-self: center;
+}
+
+.get_my_resume_link {
+    color: #ff77009a;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width:fit-content;
+}
+
+@keyframes download {
+    from {top: -3px;}
+    to {top: 7px;}
+  }
+
+.download-icon {
+    height: 20px;
+    width: auto;
+    position: absolute;
+    animation: download 1s ease-in 2s infinite alternate;
+    right: -20px;
+}
+
