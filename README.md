@@ -3,8 +3,10 @@
 
 > This is my personnal portfolio, feel free to check it out.
 
-  ![](./src/images/all-devices-black(1).png)
-
+<div style="display-flex">
+  ![](./src/images/laptop (1).png)
+  ![](./src/images/laptop (2).png)
+</div>
 
 ## Built With
 

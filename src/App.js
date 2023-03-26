@@ -1,26 +1,45 @@
+import { useDispatch, useSelector } from 'react-redux';
+import Intro from './pages/intro/Intro';
+import Projects from './pages/projects/projects';
+import Services from './pages/services/services';
+import About from './pages/about/about';
+import GetInTouch from './pages/getInTouch/getInTouch';
+import Footer from './pages/footer/footer';
+import Header from './pages/header/header';
+import { showFooter } from './redux/showFooter';
 import './App.css';
-import video1 from './video/background loop.mp4';
-import TryAsync from './modules/TryAsync';
-import GetProjects from './modules/getProjects';
-import AboutPage from './modules/AboutPage';
-import Contact from './modules/Contact';
-import Header from './modules/Header';
-import Intro from './modules/Intro';
 
 function App() {
+  const dispatch = useDispatch();
+  const showFooterState = useSelector((state) => state.footerReducer);
+  const pageInView = useSelector((state) => state.pageInViewReducer);
+  const {
+    intro,
+    services,
+    projects,
+    about,
+    contact,
+  } = pageInView;
+
+  if (intro && services && showFooterState.state) {
+    dispatch(showFooter({ state: false }));
+  } else if (projects && services && showFooterState.state) {
+    dispatch(showFooter({ state: false }));
+  } else if (about && projects && showFooterState.state) {
+    dispatch(showFooter({ state: false }));
+  } else if (about && contact && !projects && !showFooterState.state) {
+    dispatch(showFooter({ state: true }));
+  }
+
   return (
     <div className="App">
-      <Header />
       <Intro />
-      <div className="video-container">
-        <TryAsync />
-        <video autoPlay loop muted>
-          <source src={video1} type="video/mp4" />
-        </video>
-      </div>
-      <GetProjects />
-      <AboutPage />
-      <Contact />
+      <Services />
+      <Projects />
+      <About />
+      <GetInTouch />
+      <Footer />
+      <Header />
     </div>
   );
 }
