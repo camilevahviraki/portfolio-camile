@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setImageShown } from '../../redux/imageReducer';
 import nextIcon from '../../images/next-more-icon.png';
 import './ImageSlider.css';
 
 const ImageSilder = (props) => {
+  const dispatch = useDispatch();
   const { imagesArray, freeze } = props;
-
-  const [imageShown, setImageShown] = useState(0);
   const [scrollButtons, setShowScrolls] = useState(false);
+  const imageShown = useSelector(state => state.imageReducer.image);
 
   useEffect(() => {
     setImageShown(0);
@@ -14,13 +16,13 @@ const ImageSilder = (props) => {
 
   const nextImage = () => {
     if (imageShown + 1 < imagesArray.length) {
-      setImageShown(imageShown + 1);
+      dispatch(setImageShown(imageShown + 1));
     }
   };
 
   const previousImage = () => {
     if (imageShown - 1 >= 0) {
-      setImageShown(imageShown - 1);
+      dispatch(setImageShown(imageShown - 1));
     }
   };
 
@@ -73,7 +75,7 @@ const ImageSilder = (props) => {
                   ? 'image-slider-dots current-dot'
                   : 'image-slider-dots'
               }
-              onClick={() => setImageShown(id)}
+              onClick={() => dispatch(setImageShown(id))}
               key={image}
             />
           ))}
