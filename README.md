@@ -17,14 +17,11 @@
 
 To get a local copy up and running follow these simple example steps.
 
-- copy this link `https://github.com/camilevahviraki/Portfolio.git`.
+- copy this link `https://github.com/camilevahviraki/portfolio-camile.git`.
 - get the directory that you want to clone the repository.
 - open the command prompt in this directory.
-- write `git clone https://github.com/camilevahviraki/Portfolio.git`.
-- go to the repository folder in your command prompt `cd Portfolio`
-
-You can also type [this Link](https://camilevahviraki.github.io/Portfolio/) to see 
-the live demo of my personnal Portfolio.
+- write `git clone https://github.com/camilevahviraki/portfolio-camile.git`.
+- go to the repository folder in your command prompt `cd portfolio-camile`
 
 ## Live link
 
