@@ -1,5 +1,3 @@
-import React from 'react';
-
 const contactEnglish = () => (
   {
     title: 'Get in touch',
