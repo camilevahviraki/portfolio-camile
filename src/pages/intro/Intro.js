@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsLinkedin, BsFacebook } from 'react-icons/bs';
 import { FaGithub, FaWhatsappSquare } from 'react-icons/fa';
+import introImage from '../../images/intro-photo.JPG';
 import downloadIcon from '../../images/download.svg';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import introEnglish from '../../data/english/pages/intro';
@@ -89,7 +90,11 @@ const Intro = () => {
         </div>
 
       </div>
-      <div className="intro-section2"></div>
+      <div className="intro-section2">
+        <div className="intro-section-inner-wrapp">
+          <img src={introImage} alt="" className="intro-big-image" />
+        </div>
+      </div>
       <div className="intro-section3">
         <div className="rotating-square-container">
           <div className="rotating-square" />
