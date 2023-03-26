@@ -4,7 +4,6 @@ export default function languageReducer(state = { languageKey: 0 }, action) {
   switch (action.type) {
     case SELECT_LANGUAGE: {
       localStorage.setItem('language', JSON.stringify({ languageKey: action.data }));
-      console.log(action.data);
       return { languageKey: action.data };
     }
     default: {

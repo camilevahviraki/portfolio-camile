@@ -1,5 +1,5 @@
 import {
-  useEffect, useRef, useState, useMemo,
+  useEffect, useState, useMemo,
 } from 'react';
 
 function useIsInViewport(ref) {

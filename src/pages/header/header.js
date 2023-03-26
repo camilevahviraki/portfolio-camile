@@ -67,7 +67,7 @@ const Header = () => {
                   <div
                     className={key === selctedLang ? 'language-to-select selected-language' : 'language-to-select'}
                     onClick={() => selectLanguage(key)}
-                    key={key}
+                    key={lang.name}
                   >
                     {lang.name}
                   </div>

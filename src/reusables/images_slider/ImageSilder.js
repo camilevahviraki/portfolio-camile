@@ -7,7 +7,6 @@ const ImageSilder = (props) => {
 
   const [imageShown, setImageShown] = useState(0);
   const [scrollButtons, setShowScrolls] = useState(false);
-  const [arrowKeys, setArrowKeys] = useState(false);
 
   useEffect(() => {
     setImageShown(0);
@@ -30,8 +29,7 @@ const ImageSilder = (props) => {
       style={{ width: '100%', height: '100%' }}
       className="images-slider-container"
       onMouseOver={() => setShowScrolls(true)}
-      onMouseLeave={() => { setShowScrolls(false); setArrowKeys(false); }}
-      onClick={() => { setArrowKeys(true); }}
+      onMouseLeave={() => { setShowScrolls(false); }}
     >
       <div className="image-slider-video-wrap">
         <img src={imagesArray[imageShown]} alt="" className="my_store_image" />
@@ -76,6 +74,7 @@ const ImageSilder = (props) => {
                   : 'image-slider-dots'
               }
               onClick={() => setImageShown(id)}
+              key={image}
             />
           ))}
         </div>

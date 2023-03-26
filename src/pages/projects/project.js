@@ -11,7 +11,6 @@ const Project = (props) => {
 
   const {
     description,
-    id,
     imgArray,
     languages,
     live_link,
@@ -35,12 +34,12 @@ const Project = (props) => {
         <div className="project-gray-corner">
           <div className="project-languages-container">
             {languages.map((lang) => (
-              <h4 className="project-language">{lang}</h4>
+              <h4 className="project-language" key={lang}>{lang}</h4>
             ))}
           </div>
           <ul className="project-technologies-technologies">
             {technologies.map((tech) => (
-              <li className="project-technology">
+              <li className="project-technology" key={tech}>
                 <div className="dot" />
                 {tech}
               </li>

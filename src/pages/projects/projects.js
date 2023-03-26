@@ -36,7 +36,7 @@ const Projects = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const isInViewport1 = useIsInViewport(ref1);
-  const isDotsInViewPort = useIsInViewport(ref2);
+  // const isDotsInViewPort = useIsInViewport(ref2);
 
   const {
     projects,
@@ -83,6 +83,7 @@ const Projects = () => {
                 : 'image-slider-dots'
             }
             onClick={() => setProjectKey(id)}
+            key={image}
           />
         ))}
       </div>

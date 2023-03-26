@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsLinkedin, BsFacebook } from 'react-icons/bs';
 import { FaGithub, FaWhatsappSquare } from 'react-icons/fa';

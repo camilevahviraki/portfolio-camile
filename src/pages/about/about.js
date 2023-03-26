@@ -56,7 +56,7 @@ const About = () => {
   return (
     <div className="about-container" id="about-me" ref={ref1}>
       <div className="services-left-wrapp">
-        <h5 className="my-services">About me</h5>
+        <h5 className="my-services">{servicesTitle}</h5>
         <h2 className="services-title">
           {title.part1}
           {' '}
@@ -84,7 +84,7 @@ const About = () => {
           <h5 className="about-skills-title">{skills.language}</h5>
           <div className="about-languages-wrapp">
             {languages.map((lang) => (
-              <div className="skill-wrapp">
+              <div className="skill-wrapp" key={lang.name}>
                 <div className="skills-icon-wrapp">
                   <div className="skills-icon-border">
                     {lang.icon(iconStyle)}
@@ -99,7 +99,7 @@ const About = () => {
           <h5 className="about-skills-title">{skills.framework}</h5>
           <div className="about-languages-wrapp">
             {libraries.map((lang) => (
-              <div className="skill-wrapp">
+              <div className="skill-wrapp" key={lang.name}>
                 <div className="skills-icon-wrapp">
                   <div className="skills-icon-border">
                     {lang.icon(iconStyle)}
@@ -114,7 +114,7 @@ const About = () => {
           <h5 className="about-skills-title">{skills.tools}</h5>
           <div className="about-languages-wrapp">
             {tools.map((lang) => (
-              <div className="skill-wrapp">
+              <div className="skill-wrapp" key={lang.name}>
                 <div className="skills-icon-wrapp">
                   <div className="skills-icon-border">
                     {lang.icon(iconStyle)}

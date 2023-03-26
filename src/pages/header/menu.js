@@ -1,20 +1,17 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { IoMdClose } from 'react-icons/io';
 import { FaGithub, FaWhatsappSquare } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 import { FiMail } from 'react-icons/fi';
 import { BsTelephone, BsLinkedin, BsFacebook } from 'react-icons/bs';
-import { showFooter } from '../../redux/showFooter';
 import './menu.css';
 
 const Menu = (props) => {
   const { showMenu } = props;
 
-  const showFooterState = useSelector((state) => state.footerReducer);
   const pageInView = useSelector((state) => state.pageInViewReducer);
   const {
-    intro,
     services,
     projects,
     about,

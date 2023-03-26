@@ -18,6 +18,7 @@
       "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
       "react/prop-types": "off",
       "no-multi-str": "off",
+      "jsx-a11y/mouse-events-have-key-events": "off",
       "no-return-assign": "off",
       "no-param-reassign": "off",
       "camelcase": "off",
