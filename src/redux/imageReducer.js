@@ -5,8 +5,8 @@ export default function imageReducer(state = { image: 0 }, action) {
   switch (action.type) {
     case RESET_IMAGE_SHOWN: {
       return { image: 0 };
-    }case SET_IMAGE_SHOWN: {
-      return { image: action.imgKey}
+    } case SET_IMAGE_SHOWN: {
+      return { image: action.imgKey };
     }
     default: {
       return state;

@@ -36,12 +36,12 @@ const Projects = () => {
   document.onkeydown = (e) => {
     e = e || window.event;
     if (e.keyCode === 39 || e.keyCode === '39') {
-      if(isDotsInViewPort){
+      if (isDotsInViewPort) {
         nextProject();
       }
     } else if (e.keyCode === 37 || e.keyCode === '37') {
-      if(isDotsInViewPort){
-      previousProject();
+      if (isDotsInViewPort) {
+        previousProject();
       }
     }
   };
@@ -70,7 +70,7 @@ const Projects = () => {
         language.languageKey === 0 ? 'My Projects' : 'Mes Projets'
       }
       </h2>
-      <Project project={projectsLis[projectKey]}/>
+      <Project project={projectsLis[projectKey]} />
       <div className="image-slider-buttons-wrapper">
         <div>
           <button className="project-next-button previous-project" onClick={previousProject}>

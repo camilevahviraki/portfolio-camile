@@ -8,7 +8,7 @@ const ImageSilder = (props) => {
   const dispatch = useDispatch();
   const { imagesArray, freeze } = props;
   const [scrollButtons, setShowScrolls] = useState(false);
-  const imageShown = useSelector(state => state.imageReducer.image);
+  const imageShown = useSelector((state) => state.imageReducer.image);
 
   useEffect(() => {
     setImageShown(0);

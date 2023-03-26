@@ -23,7 +23,7 @@ const Project = (props) => {
     <div className="project-wrapper">
       <div className="project-dark-backround" />
       <div className="project-image-container">
-        <ImageSilder imagesArray={imgArray}/>
+        <ImageSilder imagesArray={imgArray} />
       </div>
       <div className="project-description">
         <h2 className="project-title">
