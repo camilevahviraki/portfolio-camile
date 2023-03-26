@@ -5,6 +5,7 @@ import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
+import { resetImageShown } from '../../redux/imageReducer';
 import './projects.css';
 
 const Projects = () => {
@@ -12,31 +13,38 @@ const Projects = () => {
   const projectsLis = projectsList();
   const [projectKey, setProjectKey] = useState(0);
   const language = useSelector((state) => state.languageReducer);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
   const nextProject = () => {
     if (projectKey + 1 < projectsLis.length) {
       setProjectKey(projectKey + 1);
+      dispatch(resetImageShown(0));
     }
   };
 
   const previousProject = () => {
     if (projectKey - 1 >= 0) {
       setProjectKey(projectKey - 1);
+      dispatch(resetImageShown(0));
     }
   };
+
+  const pageInView = useSelector((state) => state.pageInViewReducer);
+  const isInViewport1 = useIsInViewport(ref1);
+  const isDotsInViewPort = useIsInViewport(ref2);
 
   document.onkeydown = (e) => {
     e = e || window.event;
     if (e.keyCode === 39 || e.keyCode === '39') {
-      nextProject();
+      if(isDotsInViewPort){
+        nextProject();
+      }
     } else if (e.keyCode === 37 || e.keyCode === '37') {
+      if(isDotsInViewPort){
       previousProject();
+      }
     }
   };
-  const pageInView = useSelector((state) => state.pageInViewReducer);
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const isInViewport1 = useIsInViewport(ref1);
-  // const isDotsInViewPort = useIsInViewport(ref2);
 
   const {
     projects,
@@ -62,7 +70,7 @@ const Projects = () => {
         language.languageKey === 0 ? 'My Projects' : 'Mes Projets'
       }
       </h2>
-      <Project project={projectsLis[projectKey]} />
+      <Project project={projectsLis[projectKey]}/>
       <div className="image-slider-buttons-wrapper">
         <div>
           <button className="project-next-button previous-project" onClick={previousProject}>
