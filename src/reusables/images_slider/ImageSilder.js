@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import nextIcon from "../../images/next-more-icon.png";
-import "./ImageSlider.css";
+import React, { useState, useEffect } from 'react';
+import nextIcon from '../../images/next-more-icon.png';
+import './ImageSlider.css';
 
 const ImageSilder = (props) => {
   const { imagesArray, freeze } = props;
 
   const [imageShown, setImageShown] = useState(0);
   const [scrollButtons, setShowScrolls] = useState(false);
+  const [arrowKeys, setArrowKeys] = useState(false);
+
+  useEffect(() => {
+    setImageShown(0);
+  }, []);
 
   const nextImage = () => {
     if (imageShown + 1 < imagesArray.length) {
@@ -22,10 +27,11 @@ const ImageSilder = (props) => {
 
   return (
     <div
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: '100%', height: '100%' }}
       className="images-slider-container"
       onMouseOver={() => setShowScrolls(true)}
-      onMouseLeave={() => setShowScrolls(false)}
+      onMouseLeave={() => { setShowScrolls(false); setArrowKeys(false); }}
+      onClick={() => { setArrowKeys(true); }}
     >
       <div className="image-slider-video-wrap">
         <img src={imagesArray[imageShown]} alt="" className="my_store_image" />
@@ -66,8 +72,8 @@ const ImageSilder = (props) => {
             <div
               className={
                 id === imageShown
-                  ? "image-slider-dots current-dot"
-                  : "image-slider-dots"
+                  ? 'image-slider-dots current-dot'
+                  : 'image-slider-dots'
               }
               onClick={() => setImageShown(id)}
             />

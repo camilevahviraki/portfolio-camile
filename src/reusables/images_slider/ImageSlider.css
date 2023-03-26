@@ -38,6 +38,8 @@
     top: 45%;
     cursor: pointer;
     background-color: #27282c92;
+    /* left: 50px; */
+    width: 50px;
 }
 
 .button-next-image-right img {
@@ -67,7 +69,8 @@
 .current-dot {
     width: 11px;
     height: 11px;
-    background-color: aliceblue;
+    background-color: #ff7700c7;
+    margin-right: 6px;
     border: 1px solid rgb(11, 107, 107);
 }
 
@@ -84,3 +87,4 @@
     display: flex;
     align-items: center;
 }
+
