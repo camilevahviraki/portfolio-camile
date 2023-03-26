@@ -3,9 +3,9 @@
 
 > This is my personnal portfolio, feel free to check it out.
 
-<div style="display-flex">
-  ![](./src/images/laptop (1).png)
-  ![](./src/images/laptop (2).png)
+<div>
+  <img src='./src/images/screen1.png' alt="">
+  <img src='./src/images/screen2.png' alt="">
 </div>
 
 ## Built With
