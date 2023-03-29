@@ -8,9 +8,68 @@
     background-color: #1c1e23;
 }
 
+.project-wrapp-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-project {
+  position: absolute;
+  height: 38vw;
+  width: 80%;
+  max-height: 80vh;
+}
+
+.gray-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2c453a9e;
+    border-radius: 20px;
+    z-index: 8;
+}
+
+.activeCard {
+    position: absolute;
+    z-index: 9; 
+  }
+
+.secondActive {
+    position: absolute;
+    z-index: 8;
+  }
+  
+  .right-card {
+    right: 7%;
+    /* animation: rightcard 1s ease-in-out 5ms 1 normal forwards; */
+  }
+
+  .left-card {
+    left: 7%;
+    /* animation: leftcard 1s ease-in-out 5ms 1 normal forwards; */
+  }
+  
+  .thirdActive {
+    position: absolute;
+    z-index: 7;
+  }
+  
+  .right-card2 {
+    right: 5%;
+  }
+  
+  .left-card2 {
+    left: 5%;
+  }
+
 .project-wrapper{
-    width: 80%;
-    min-height: 38vw;
+    width: 80vw;
+    min-height: 100%;
     /* max-height: calc(); */
     border-radius: 20px;
     position: relative;
@@ -19,6 +78,7 @@
     z-index: 5;
     box-shadow: 1px 1px 20px #0b0d11;
     overflow: hidden;
+    margin-right: 30px;
 }
 
 .project-dark-backround {
@@ -68,7 +128,7 @@
 
 .project-title {
     margin: 30px auto;
-    color: #dcdcdc; 
+    color: #ff7700bf; 
     margin-left: 20px;
 }
 
@@ -199,6 +259,18 @@
     z-index: 10;
 }
 
+.locked {
+    color: #918478!important;
+    border: 2px solid #5f5348!important;
+    background-color: transparent!important;
+    cursor: default;
+}
+
+.locked:hover {
+    color: #5f5348;
+    border: 2px solid #5f5348;
+}
+
 .project-next-button:hover {
     border: 2px solid #ff7700;
     color: #ff7700;
@@ -211,4 +283,19 @@
 
 .next-project {
     right: 4.5%;
+}
+
+.pro-pro-test {
+    width: 90%;
+    height: 200px;
+    margin-right: 30px;
+    border: 1px solid red;
+    /* position: absolute; */
+    overflow: auto;
+    position: relative;
+}
+
+.see-live-icon {
+    margin-left: 12px;
+    font-size: 20px;
 }
