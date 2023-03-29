@@ -11,6 +11,8 @@ import bookStoreImg from '../../../images/projects/book-store/book-store-img.png
 import spaceImg1 from '../../../images/projects/space-traveller/img1.jpeg';
 import spaceImg2 from '../../../images/projects/space-traveller/img2.png';
 import spaceImg3 from '../../../images/projects/space-traveller/img3.png';
+import todoImg1 from '../../../images/projects/TodoList/todo1.png';
+import todoImg2 from '../../../images/projects/TodoList/todo2.png';
 
 const projectsEnglish = () => (
   [
@@ -90,6 +92,23 @@ const projectsEnglish = () => (
       ],
       live_link: 'https://space-travelers-hub-c.netlify.app/',
       project_link: 'https://github.com/camilevahviraki/Space-Travelers-Hub',
+    },
+    {
+      id: 5,
+      project_name: 'To do list',
+      imgArray: [todoImg1, todoImg2],
+      description: 'A simple to do list app to manage your tasks, projects, and team\'s work.\
+       Trusted by many individuals and teams worldwide to stay organized.',
+      languages: [
+        'Vanila JAVASCRIPT',
+        'Webpack',
+      ],
+      technologies: [
+        'Netlify',
+        'Jest',
+      ],
+      live_link: 'https://camile-to-do-list-app.netlify.app/',
+      project_link: 'https://github.com/camilevahviraki/To-do-list-app-',
     },
   ]
 );
