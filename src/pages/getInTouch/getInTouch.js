@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdLocationOn } from 'react-icons/md';
 import { FiMail } from 'react-icons/fi';
@@ -15,6 +15,11 @@ const GetInTouch = () => {
   const dispatch = useDispatch();
   const pageInView = useSelector((state) => state.pageInViewReducer);
   const language = useSelector((state) => state.languageReducer);
+  const [username, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+
   let pageData = contactEnglish();
   if (language.languageKey === 0) {
     pageData = contactEnglish();
@@ -47,15 +52,55 @@ const GetInTouch = () => {
     fromInput,
   } = pageData;
 
+  const handleSubmit = (e) => {
+    if (username === '') {
+      e.preventDefault();
+      setErrorMessage('Please input your name before submit!');
+    } else if (email === '') {
+      e.preventDefault();
+      setErrorMessage('Please input your Email!');
+    } else if (message === '') {
+      e.preventDefault();
+      setErrorMessage('Please input a short message and get in touch!');
+    } else {
+      setErrorMessage(null);
+    }
+  };
+
   return (
     <div className="get-in-touch-container" id="get_in_touch" ref={ref1}>
       <div className="get-in-touch-form-container">
         <h4 className="get-in-touch-title">{title}</h4>
         <p>{formText}</p>
-        <form className="get-in-touch-form">
-          <input type="text" name="username" placeholder={fromInput.name} />
-          <input type="text" name="email" placeholder={fromInput.mail} />
-          <textarea name="message" placeholder={fromInput.message}></textarea>
+        <form
+          action="https://formspree.io/f/xgedzqjv"
+          method="POST"
+          className="get-in-touch-form"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            name="username"
+            placeholder={fromInput.name}
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder={fromInput.mail}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <textarea
+            name="message"
+            placeholder={fromInput.message}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          >
+          </textarea>
+          <button type="submit" className="submit-button">GetInTouch</button>
+          <p>{errorMessage}</p>
         </form>
       </div>
       <div className="get-in-touch-contact-container">

@@ -113,3 +113,19 @@
     color: #ff7700a4;
 }
 
+.submit-button {
+    padding: 12px 18px;
+    background-color: transparent;
+    border: 2px solid #c4c4c4da;
+    color: #c4c4c4da;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.submit-button:hover {
+    background-color: transparent;
+    border: 2px solid #ff7700ba;
+    color: #ff7700ba;
+    font-size: 19px;
+    font-weight: 700;
+}
