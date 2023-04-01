@@ -1,104 +1,122 @@
 .header-container {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 10;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
 }
 
 .hamburger-button-wrap {
-    position: absolute;
-    right: 5%;
-    color: #dddcdc;
-    font-size: 34px;
-    cursor: pointer;
-
+  position: absolute;
+  right: 5%;
+  color: #dddcdc;
+  font-size: 34px;
+  cursor: pointer;
 }
 
 .hamburger-button-wrap:hover {
-    color: #ff770088;
+  color: #f708;
 }
 
 .logo-wrapp {
-    position: absolute;
-    left: 5%;
-    text-decoration: none;
-    color: #dddcdc;
-    font-size: 30px;
-    font-weight: 700;
+  position: absolute;
+  left: 5%;
+  text-decoration: none;
+  color: #dddcdc;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .logo-cont {
-    position: relative;
-    height: 0;
-    width: 1px solid green;
+  position: relative;
+  height: 0;
+  width: 1px solid green;
 }
 
 .logo-wrapp a {
-    color: #dddcdc;
-    text-decoration: none;
-    z-index: 10;
-    cursor: pointer;
-    position: absolute;
-    top: -40px;
-    left: -10px;
+  color: #dddcdc;
+  text-decoration: none;
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: -50px;
+  left: -10px;
 }
 
 .logo-back-blur {
-    background-color: #9e9b9b5c;
-    filter: blur(30px);
-    width: 100px;
-    height: 60px;
-    /* position: absolute; */
-    z-index: 8;
+  background-color: #9e9b9b5c;
+  filter: blur(30px);
+  width: 100px;
+  height: 60px;
+
+  /* position: absolute; */
+  z-index: 8;
 }
 
 .select-language-container {
-    position: absolute;
-    right: 10%;
-    background-color: transparent;
-    color: #dddcdc;
+  position: absolute;
+  right: 10%;
+  background-color: transparent;
+  color: #dddcdc;
 }
 
 .select-language-button {
-    background-color: transparent;
-    color: #dddcdc;
-    display: flex;
-    align-items: center;
-    border: none;
-    font-size: 17px;
-    cursor: pointer;
-    z-index: 10;
+  background-color: transparent;
+  color: #dddcdc;
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .select-language-button:hover {
-    color: #ff770088;
+  color: #f708;
 }
 
 .select-language-button span {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .languages-list {
-    border: 1px solid #403e3e5c;
-    width: 12vw;
-    position: absolute;
-    top: 35px;
-    right: 3%;
-    padding: 1rem 0;
-    background-color: #0b0d11;
-    box-shadow: 1px 1px 7px #42474fd9;
+  border: 1px solid #403e3e5c;
+  width: 12vw;
+  position: absolute;
+  top: 35px;
+  right: 3%;
+  padding: 1rem 0;
+  background-color: #0b0d11;
+  box-shadow: 1px 1px 7px #42474fd9;
 }
 
 .language-to-select {
-    width: 100%;
-    cursor: pointer;
+  width: 100%;
+  cursor: pointer;
 }
 
 .selected-language {
-    background-color: #403e3e5c;
+  background-color: #403e3e5c;
+  color: #dddcdc;
+  box-shadow: 1px 1px 10px #dddcdccd;
+}
+
+@media screen and (max-width: 700px){
+  .select-language-container {
+    position: absolute;
+    right: 80px;
+    background-color: transparent;
     color: #dddcdc;
-    box-shadow: 1px 1px 10px #dddcdccd;
+  }
+
+  .logo-wrapp a {
+    font-size: 22px;
+  }
+
+  .languages-list {
+    border: 1px solid #403e3e5c;
+    width: 25vw;
+  }
 }
