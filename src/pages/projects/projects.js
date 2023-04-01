@@ -167,6 +167,18 @@ const Projects = () => {
           ))
         }
       </div>
+      <div className="projects-wrapper-mobile">
+        {
+          projectsLis.map((project, key) => (
+            <Project
+              project={project}
+              classComponent=""
+              style={{}}
+              languageKey={language.languageKey}
+            />
+          ))
+        }
+      </div>
 
       <div className="image-slider-buttons-wrapper">
         <div>

@@ -4,7 +4,7 @@ import { VscLiveShare } from 'react-icons/vsc';
 import ImageSilder from '../../reusables/images_slider/ImageSilder';
 import './projects.css';
 
-const Project = (props) => {
+const ProjectMob = (props) => {
   const {
     project,
     classComponent,
@@ -25,7 +25,7 @@ const Project = (props) => {
   return (
     <div draggable className={`card-project ${classComponent}`} style={style}>
       {
-        classComponent !== 'activeCard' && classComponent !== ''
+        classComponent !== 'activeCard'
           ? <div className="gray-shadow" />
           : <></>
       }
@@ -75,4 +75,4 @@ const Project = (props) => {
   );
 };
 
-export default Project;
+export default ProjectMob;
