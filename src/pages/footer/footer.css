@@ -1,26 +1,33 @@
 .footer-container {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    background-color: #1c1e23;
-    color: #9d9c9c;
-    text-align: start;
-    border-top: 1px solid #827f7fce;
-    z-index: 10;
-    animation: foot 1s ease 0.5s 1 forwards normal;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: #1c1e23;
+  color: #9d9c9c;
+  text-align: start;
+  border-top: 1px solid #827f7fce;
+  z-index: 10;
+  animation: foot 1s ease 0.5s 1 forwards normal;
 }
 
 @keyframes foot {
-    from {
-        bottom: -60px;
-    }to{
-        bottom: 0;
-    }
-    
+  from {
+    bottom: -60px;
+  }
+
+  to {
+    bottom: 0;
+  }
 }
 
 .copyright-title {
-    margin-left: 5%;
-    display: flex;
-    align-items: center;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px){
+  .footer-container {
+    width: 100vw;
+  }
 }
