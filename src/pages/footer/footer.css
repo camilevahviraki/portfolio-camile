@@ -26,7 +26,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .footer-container {
     width: 100vw;
   }

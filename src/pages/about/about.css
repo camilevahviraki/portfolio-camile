@@ -15,9 +15,6 @@
 .about-me-skills-container {
   width: 40%;
   margin-left: 10%;
-}
-
-.about-me-skills-container {
   display: flex;
   flex-direction: column;
 }
@@ -99,7 +96,7 @@
   right: -20px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .about-container {
     height: auto;
     display: flex;

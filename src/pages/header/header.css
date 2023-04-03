@@ -32,7 +32,6 @@
 .logo-cont {
   position: relative;
   height: 0;
-  width: 1px solid green;
 }
 
 .logo-wrapp a {
@@ -103,7 +102,7 @@
   box-shadow: 1px 1px 10px #dddcdccd;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .select-language-container {
     position: absolute;
     right: 80px;

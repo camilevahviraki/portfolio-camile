@@ -1,45 +1,42 @@
 .project-pop-up-container {
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgb(255, 255, 255);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* justify-content: center; */
 }
 
 .popup-image-container {
-    /* margin-left: 5%; */
-    margin-top: 30px;
-    width: 90vw;
-    height: 40vh;
-    border: 1px solid green;
+  /* margin-left: 5%; */
+  margin-top: 30px;
+  width: 90vw;
+  height: 40vh;
+  border: 1px solid green;
 }
 
 .popUp-dots {
-    display: flex!important;
+  display: flex !important;
 }
 
 .popup-description {
-    width: 90%;
-    border: 1px solid green;
-    margin-bottom: 30px;
+  width: 90%;
+  border: 1px solid green;
+  margin-bottom: 30px;
 }
 
 .popup-description-text {
-    color: #080d0f!important;
-    font-weight: 600;
+  color: #080d0f !important;
+  font-weight: 600;
 }
 
 .popup-tech {
-  color: #010709!important;
+  color: #010709 !important;
 }
 
 .popup-button a {
-    color: #010709!important;
-}
-
-.popup-title {
-
+  color: #010709 !important;
 }

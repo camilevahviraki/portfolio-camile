@@ -168,7 +168,6 @@
   margin-left: 20px;
   position: absolute;
   top: calc(50% + 42px);
-  margin-left: 20px;
   padding: 0;
 }
 
@@ -193,9 +192,6 @@
   display: flex;
   position: absolute;
   bottom: 40px;
-}
-
-.project-buttons-live {
   margin-left: 20px;
 }
 
@@ -318,6 +314,7 @@
   border-radius: 15px;
   margin-left: 5%;
   margin-bottom: 40px;
+
   /* justify-self:flex-end; */
 }
 
@@ -338,16 +335,14 @@
 
   .project-wrapper {
     width: 90vw;
-    height: fit-content;
     border-radius: 8px;
     position: relative;
     background-color: #1c1e23;
     display: flex;
     flex-direction: column;
     z-index: 5;
-    box-shadow: 1px 1px 10px #000000;
+    box-shadow: 1px 1px 10px #000;
     margin-right: 0;
-    /* border: 1px solid red; */
   }
 
   .project-image-container {
@@ -360,7 +355,9 @@
   .project-description {
     width: 100%;
     position: relative;
+
     /* right: 0; */
+
     /* top: 40%; */
     z-index: 4;
     height: auto;
@@ -375,8 +372,6 @@
     height: auto;
     background-color: #1c1e23;
     z-index: 3;
-    /* border: 1px solid rgb(35, 161, 214); */
-    display: flex;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -439,7 +434,6 @@
     height: auto;
     width: 100%;
     margin-bottom: 20px;
-    max-height: fit-content;
   }
 
   .image-slider-buttons-wrapper {
