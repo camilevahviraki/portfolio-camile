@@ -169,12 +169,13 @@ const Projects = () => {
       </div>
       <div className="projects-wrapper-mobile">
         {
-          projectsLis.map((project, key) => (
+          projectsLis.map((project) => (
             <Project
               project={project}
               classComponent=""
               style={{}}
               languageKey={language.languageKey}
+              key={project.project_name}
             />
           ))
         }
