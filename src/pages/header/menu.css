@@ -35,8 +35,6 @@
 .social-network-menu {
   width: 80%;
   justify-content: center;
-  width: 80%;
-  justify-content: center;
   margin-left: 40px;
   margin-bottom: 140px;
   font-size: 24px;
@@ -63,7 +61,7 @@
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .menu-container {
     width: 100vw;
   }
@@ -79,5 +77,4 @@
   .social-network-menu {
     margin-left: 0;
   }
-  
 }

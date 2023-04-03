@@ -199,7 +199,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .intro-section1 {
     height: 100%;
     width: 88%;
@@ -212,17 +212,17 @@
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .intro-section2 {
     display: none;
   }
-  
+
   .intro-section-inner-wrapp {
     width: 100%;
     height: 100%;
     position: relative;
   }
-  
+
   .intro-section3 {
     display: none;
   }
@@ -251,6 +251,6 @@
   }
 
   .get_my_resume_link {
-    font-size: 14px!important;
+    font-size: 14px !important;
   }
 }

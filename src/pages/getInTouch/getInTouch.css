@@ -79,6 +79,11 @@
   color: #c6c4c4;
 }
 
+.social-network-container a {
+  margin-right: 24px;
+  color: #b2afaf;
+}
+
 .contact-wrapper a:hover {
   color: #ff77009a;
 }
@@ -104,11 +109,6 @@
   color: #b2afaf;
 }
 
-.social-network-container a {
-  margin-right: 24px;
-  color: #b2afaf;
-}
-
 .social-network-container a:hover {
   color: #ff7700a4;
 }
@@ -130,7 +130,7 @@
   font-weight: 700;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .get-in-touch-container {
     height: auto;
     width: 100vw;
@@ -176,7 +176,6 @@
   }
 
   .header-container {
-    width: 100vw!important;
+    width: 100vw !important;
   }
-  
 }
