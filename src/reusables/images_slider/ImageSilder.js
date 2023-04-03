@@ -6,7 +6,7 @@ import './ImageSlider.css';
 
 const ImageSilder = (props) => {
   const dispatch = useDispatch();
-  const { imagesArray, freeze } = props;
+  const { imagesArray, freeze, popUp } = props;
   const [scrollButtons, setShowScrolls] = useState(false);
   const imageShown = useSelector((state) => state.imageReducer.image);
 
@@ -41,7 +41,7 @@ const ImageSilder = (props) => {
         <>
           {scrollButtons ? (
             <>
-              <div className="image-slider-buttons-wrapper">
+              <div className={popUp ? 'image-slider-buttons-wrapper popUp-dots' : 'image-slider-buttons-wrapper'}>
                 <div>
                   <button
                     className="button-next-image-left"
@@ -67,7 +67,7 @@ const ImageSilder = (props) => {
       )}
 
       {!freeze && imagesArray.length !== 1 ? (
-        <div className="image-sliders-dots-wrap">
+        <div className={popUp ? 'image-sliders-dots-wrap popUp-dots' : 'image-sliders-dots-wrap'}>
           {imagesArray.map((image, id) => (
             <div
               className={
