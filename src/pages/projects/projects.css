@@ -309,8 +309,9 @@
 }
 
 .project-see-more-button {
-  padding: 8px 12px;
-  background-color: green;
+  padding: 6px 12px;
+  background-color: #27282c5a;
+  border: 2px solid #dcdcdc;
   color: #dcdcdc;
   font-size: 14px;
   font-weight: 600;
