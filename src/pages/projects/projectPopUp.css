@@ -15,7 +15,8 @@
   margin-top: 30px;
   width: 90vw;
   height: 40vh;
-  border: 1px solid green;
+
+  /* border: 1px solid #acacac; */
 }
 
 .popUp-dots {
@@ -24,7 +25,8 @@
 
 .popup-description {
   width: 90%;
-  border: 1px solid green;
+
+  /* border: 1px solid #acacac; */
   margin-bottom: 30px;
 }
 
