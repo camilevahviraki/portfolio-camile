@@ -1,16 +1,21 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
-import { resetImageShown } from '../../redux/imageReducer';
+import RecentProject from '../recent_projects/RecentProject';
 import './projects.css';
 
 const Projects = () => {
   const dispatch = useDispatch();
   const projectsLis = projectsList();
+
+  const imagesContainerRef = useRef(null);
+  const [scrollButtons, setShowScrolls] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(null);
+  const [scrollTo, setScrollTo] = useState(1);
 
   const [activekey, setActiveKey] = useState(1);
   const [startX, setStartX] = useState(0);
@@ -47,14 +52,12 @@ const Projects = () => {
     if (activekey < projectsLis.length) {
       setActiveKey(activekey + 1);
     }
-    dispatch(resetImageShown(0));
   };
 
   const handlePreviousCard = () => {
     if (activekey > 1) {
       setActiveKey(activekey - 1);
     }
-    dispatch(resetImageShown(0));
   };
 
   const assignClass = (key) => {
@@ -136,8 +139,24 @@ const Projects = () => {
     }
   };
 
+  useEffect(() => {
+    setContainerWidth(imagesContainerRef.current.offsetWidth);
+  }, []);
+
+  if (scrollTo !== activekey) {
+    if (imagesContainerRef.current) {
+      imagesContainerRef.current.scrollTo({
+        top: 0,
+        left: (activekey - 1) * containerWidth * 1.03,
+        behavior: 'smooth',
+      });
+      setScrollTo(activekey);
+    }
+  }
+
   return (
     <div className="projects_container" id="projects" ref={ref1}>
+      {/* <RecentProject/> */}
       <div className="project-back-blur" />
       <h2 className="my-projects-title">
         {
@@ -150,22 +169,24 @@ const Projects = () => {
         onDragEnd={handleDragEnd}
         className="project-wrapp-slider"
       >
+        <div className='projects-lister' ref={imagesContainerRef}>
         {
           projectsLis.map((project, key) => (
             <Project
               project={project}
               classComponent={assignClass(key + 1)}
-              style={activekey === key + 1
-                ? {
-                  height: `${assignSize(key + 1)}%`,
-                  left: `${position}`,
-                }
-                : { height: `${assignSize(key + 1)}%` }}
+             
               key={project.name}
+              style={{
+                height: '100%',
+                  left: `${position}`,
+              }}
               languageKey={language.languageKey}
             />
           ))
         }
+        </div>
+        
       </div>
       <div className="projects-wrapper-mobile">
         {
