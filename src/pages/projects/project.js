@@ -11,7 +11,7 @@ import './projects.css';
 const Project = (props) => {
   const dispatch = useDispatch();
   const {
-    project, classComponent, style, languageKey,
+    project, classComponent, languageKey,
   } = props;
 
   const {
@@ -25,12 +25,13 @@ const Project = (props) => {
   } = project;
 
   return (
-    <div draggable className={`card-project ${classComponent}`} style={style}>
-      {classComponent !== 'activeCard' && classComponent !== '' ? (
-        <div className="gray-shadow" />
+  // <div draggable className={`card-project ${classComponent}`} style={style}>
+    <div draggable className="card-project">
+      {/* {classComponent !== 'activeCard' && classComponent !== '' ? (
+        // <div className="gray-shadow" />
       ) : (
         <></>
-      )}
+      )} */}
       <div className="project-wrapper">
         <div className="project-dark-backround" />
         <div className="project-image-container">

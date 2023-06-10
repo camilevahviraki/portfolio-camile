@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Intro from './pages/intro/Intro';
 import Projects from './pages/projects/projects';
@@ -11,6 +12,7 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
+  const appPage = useRef(null);
   const showFooterState = useSelector((state) => state.footerReducer);
   const pageInView = useSelector((state) => state.pageInViewReducer);
   const {
@@ -31,8 +33,17 @@ function App() {
     dispatch(showFooter({ state: true }));
   }
 
+  // if (appPage.current) {
+  //   appPage.current.scrollTo({
+  //     top: 0,
+  //     left: (activekey - 1) * containerWidth * 1.03,
+  //     behavior: 'smooth',
+  //   });
+  //   setScrollTo(activekey);
+  // }
+
   return (
-    <div className="App">
+    <div className="App" ref={appPage}>
       <Intro />
       <Services />
       <Projects />

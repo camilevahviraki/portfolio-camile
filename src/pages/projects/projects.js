@@ -1,25 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
-import { resetImageShown } from '../../redux/imageReducer';
+// import RecentProject from '../recent_projects/RecentProject';
 import './projects.css';
 
 const Projects = () => {
   const dispatch = useDispatch();
   const projectsLis = projectsList();
 
+  const imagesContainerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(null);
+  const [scrollTo, setScrollTo] = useState(1);
+
   const [activekey, setActiveKey] = useState(1);
   const [startX, setStartX] = useState(0);
   const [endX, setEndX] = useState(0);
-  const [size2L, setSize2L] = useState(80);
-  const [size3L, setSize3L] = useState(60);
-  const [size2R, setSize2R] = useState(80);
-  const [size3R, setSize3R] = useState(60);
-  const [position, setPosition] = useState('10%');
 
   const language = useSelector((state) => state.languageReducer);
   const ref1 = useRef(null);
@@ -47,14 +46,12 @@ const Projects = () => {
     if (activekey < projectsLis.length) {
       setActiveKey(activekey + 1);
     }
-    dispatch(resetImageShown(0));
   };
 
   const handlePreviousCard = () => {
     if (activekey > 1) {
       setActiveKey(activekey - 1);
     }
-    dispatch(resetImageShown(0));
   };
 
   const assignClass = (key) => {
@@ -72,49 +69,30 @@ const Projects = () => {
     return 'hidden-card';
   };
 
-  const assignSize = (key) => {
-    if (key === activekey) {
-      return 300;
-    } if (key === activekey + 1) {
-      return size2L;
-    } if (key === activekey - 1) {
-      return size2R;
-    } if (key === activekey + 2) {
-      return size3L;
-    } if (key === activekey - 2) {
-      return size3R;
-    }
-    return 0;
-  };
-
   const handleDragStart = (event) => {
     setStartX(event.clientX);
   };
 
-  const handleDrag = (event) => {
-    const dragged = event.clientX - startX;
-    const absDragged = Math.sqrt(dragged * dragged);
-    if (dragged < 1 && dragged >= -50) {
-      setSize2L(80 + (40 * (absDragged / 50)));
-      setSize3L(60 + (40 * (absDragged / 50)));
-      setSize2R(80 - (40 * (absDragged / 50)));
-      setSize3R(60 - (40 * (absDragged / 100)));
-    } else if (dragged > 1 && dragged <= 50) {
-      setSize2L(80 - (40 * (absDragged / 50)));
-      setSize3L(60 - (40 * (absDragged / 50)));
-      setSize2R(80 + (40 * (absDragged / 50)));
-      setSize3R(60 + (40 * (absDragged / 50)));
-    }
-    setPosition(`calc(10% + ${dragged}px)`);
-  };
+  const handleDrag = () => {};
+  //   // const dragged = event.clientX - startX;
+  //   // const absDragged = Math.sqrt(dragged * dragged);
+  //   // if (dragged < 1 && dragged >= -50) {
+  //   //   setSize2L(80 + (40 * (absDragged / 50)));
+  //   //   setSize3L(60 + (40 * (absDragged / 50)));
+  //   //   setSize2R(80 - (40 * (absDragged / 50)));
+  //   //   setSize3R(60 - (40 * (absDragged / 100)));
+  //   // } else if (dragged > 1 && dragged <= 50) {
+  //   //   setSize2L(80 - (40 * (absDragged / 50)));
+  //   //   setSize3L(60 - (40 * (absDragged / 50)));
+  //   //   setSize2R(80 + (40 * (absDragged / 50)));
+  //   //   setSize3R(60 + (40 * (absDragged / 50)));
+  //   // }
+  //   // setPosition(`calc(10% + ${dragged}px)`);
+  // };
 
   const handleDragEnd = (event) => {
-    setSize2L(80);
-    setSize3L(60);
-    setSize2R(80);
-    setSize3R(60);
     setEndX(event.clientX);
-    setPosition('10%');
+    // setPosition('10%');
     const distance = endX - startX;
     if (distance > 100) {
       handlePreviousCard();
@@ -136,8 +114,24 @@ const Projects = () => {
     }
   };
 
+  useEffect(() => {
+    setContainerWidth(imagesContainerRef.current.offsetWidth);
+  }, []);
+
+  if (scrollTo !== activekey) {
+    if (imagesContainerRef.current) {
+      imagesContainerRef.current.scrollTo({
+        top: 0,
+        left: (activekey - 1) * containerWidth * 1.03,
+        behavior: 'smooth',
+      });
+      setScrollTo(activekey);
+    }
+  }
+
   return (
     <div className="projects_container" id="projects" ref={ref1}>
+      {/* <RecentProject/> */}
       <div className="project-back-blur" />
       <h2 className="my-projects-title">
         {
@@ -150,22 +144,23 @@ const Projects = () => {
         onDragEnd={handleDragEnd}
         className="project-wrapp-slider"
       >
-        {
+        <div className="projects-lister" ref={imagesContainerRef}>
+          {
           projectsLis.map((project, key) => (
             <Project
               project={project}
               classComponent={assignClass(key + 1)}
-              style={activekey === key + 1
-                ? {
-                  height: `${assignSize(key + 1)}%`,
-                  left: `${position}`,
-                }
-                : { height: `${assignSize(key + 1)}%` }}
               key={project.name}
+              style={{
+                height: '100%',
+                // left: `${position}`,
+              }}
               languageKey={language.languageKey}
             />
           ))
         }
+        </div>
+
       </div>
       <div className="projects-wrapper-mobile">
         {
