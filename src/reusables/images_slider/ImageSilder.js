@@ -47,17 +47,15 @@ const ImageSilder = (props) => {
       onMouseLeave={() => { setShowScrolls(false); }}
     >
       <div className="image-slider-video-wrap" ref={imagesContainerRef}>
-        
-          {
+
+        {
             imagesArray.map((image) => (
-              <div className='my_store_image-wrapp'>
-              <img src={image} alt="" className="my_store_image" />
+              <div className="my_store_image-wrapp" key={image}>
+                <img src={image} alt="" className="my_store_image" />
               </div>
             ))
           }
-        
-        
-        
+
       </div>
 
       {!freeze && imagesArray.length !== 1 ? (
@@ -94,7 +92,7 @@ const ImageSilder = (props) => {
           {imagesArray.map((image, id) => (
             <div
               className={
-                id + 1=== imageShown
+                id + 1 === imageShown
                   ? 'image-slider-dots current-dot'
                   : 'image-slider-dots'
               }

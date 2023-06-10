@@ -5,7 +5,7 @@ import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
-import RecentProject from '../recent_projects/RecentProject';
+// import RecentProject from '../recent_projects/RecentProject';
 import './projects.css';
 
 const Projects = () => {
@@ -13,18 +13,12 @@ const Projects = () => {
   const projectsLis = projectsList();
 
   const imagesContainerRef = useRef(null);
-  const [scrollButtons, setShowScrolls] = useState(false);
   const [containerWidth, setContainerWidth] = useState(null);
   const [scrollTo, setScrollTo] = useState(1);
 
   const [activekey, setActiveKey] = useState(1);
   const [startX, setStartX] = useState(0);
   const [endX, setEndX] = useState(0);
-  const [size2L, setSize2L] = useState(80);
-  const [size3L, setSize3L] = useState(60);
-  const [size2R, setSize2R] = useState(80);
-  const [size3R, setSize3R] = useState(60);
-  const [position, setPosition] = useState('10%');
 
   const language = useSelector((state) => state.languageReducer);
   const ref1 = useRef(null);
@@ -75,49 +69,30 @@ const Projects = () => {
     return 'hidden-card';
   };
 
-  const assignSize = (key) => {
-    if (key === activekey) {
-      return 300;
-    } if (key === activekey + 1) {
-      return size2L;
-    } if (key === activekey - 1) {
-      return size2R;
-    } if (key === activekey + 2) {
-      return size3L;
-    } if (key === activekey - 2) {
-      return size3R;
-    }
-    return 0;
-  };
-
   const handleDragStart = (event) => {
     setStartX(event.clientX);
   };
 
-  const handleDrag = (event) => {
-    const dragged = event.clientX - startX;
-    const absDragged = Math.sqrt(dragged * dragged);
-    if (dragged < 1 && dragged >= -50) {
-      setSize2L(80 + (40 * (absDragged / 50)));
-      setSize3L(60 + (40 * (absDragged / 50)));
-      setSize2R(80 - (40 * (absDragged / 50)));
-      setSize3R(60 - (40 * (absDragged / 100)));
-    } else if (dragged > 1 && dragged <= 50) {
-      setSize2L(80 - (40 * (absDragged / 50)));
-      setSize3L(60 - (40 * (absDragged / 50)));
-      setSize2R(80 + (40 * (absDragged / 50)));
-      setSize3R(60 + (40 * (absDragged / 50)));
-    }
-    setPosition(`calc(10% + ${dragged}px)`);
-  };
+  const handleDrag = () => {};
+  //   // const dragged = event.clientX - startX;
+  //   // const absDragged = Math.sqrt(dragged * dragged);
+  //   // if (dragged < 1 && dragged >= -50) {
+  //   //   setSize2L(80 + (40 * (absDragged / 50)));
+  //   //   setSize3L(60 + (40 * (absDragged / 50)));
+  //   //   setSize2R(80 - (40 * (absDragged / 50)));
+  //   //   setSize3R(60 - (40 * (absDragged / 100)));
+  //   // } else if (dragged > 1 && dragged <= 50) {
+  //   //   setSize2L(80 - (40 * (absDragged / 50)));
+  //   //   setSize3L(60 - (40 * (absDragged / 50)));
+  //   //   setSize2R(80 + (40 * (absDragged / 50)));
+  //   //   setSize3R(60 + (40 * (absDragged / 50)));
+  //   // }
+  //   // setPosition(`calc(10% + ${dragged}px)`);
+  // };
 
   const handleDragEnd = (event) => {
-    setSize2L(80);
-    setSize3L(60);
-    setSize2R(80);
-    setSize3R(60);
     setEndX(event.clientX);
-    setPosition('10%');
+    // setPosition('10%');
     const distance = endX - startX;
     if (distance > 100) {
       handlePreviousCard();
@@ -169,24 +144,23 @@ const Projects = () => {
         onDragEnd={handleDragEnd}
         className="project-wrapp-slider"
       >
-        <div className='projects-lister' ref={imagesContainerRef}>
-        {
+        <div className="projects-lister" ref={imagesContainerRef}>
+          {
           projectsLis.map((project, key) => (
             <Project
               project={project}
               classComponent={assignClass(key + 1)}
-             
               key={project.name}
               style={{
                 height: '100%',
-                  left: `${position}`,
+                // left: `${position}`,
               }}
               languageKey={language.languageKey}
             />
           ))
         }
         </div>
-        
+
       </div>
       <div className="projects-wrapper-mobile">
         {
