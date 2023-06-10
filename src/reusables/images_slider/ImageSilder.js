@@ -1,30 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setImageShown } from '../../redux/imageReducer';
+import React, { useState, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import nextIcon from '../../images/next-more-icon.png';
 import './ImageSlider.css';
 
 const ImageSilder = (props) => {
   const dispatch = useDispatch();
+  const imagesContainerRef = useRef(null);
   const { imagesArray, freeze, popUp } = props;
   const [scrollButtons, setShowScrolls] = useState(false);
-  const imageShown = useSelector((state) => state.imageReducer.image);
-
-  useEffect(() => {
-    setImageShown(0);
-  }, []);
+  const [imageShown, setImageShown] = useState(1);
+  const [containerWidth, setContainerWidth] = useState(null);
+  const [scrollTo, setScrollTo] = useState(1);
 
   const nextImage = () => {
-    if (imageShown + 1 < imagesArray.length) {
-      dispatch(setImageShown(imageShown + 1));
+    if (imageShown < imagesArray.length) {
+      setImageShown(imageShown + 1);
     }
   };
 
   const previousImage = () => {
-    if (imageShown - 1 >= 0) {
-      dispatch(setImageShown(imageShown - 1));
+    if (imageShown - 1 >= 1) {
+      setImageShown(imageShown - 1);
     }
   };
+
+  useEffect(() => {
+    setContainerWidth(imagesContainerRef.current.offsetWidth);
+  }, []);
+
+  if (scrollTo !== imageShown) {
+    if (imagesContainerRef.current) {
+      imagesContainerRef.current.scrollTo({
+        top: 0,
+        left: (imageShown - 1) * containerWidth,
+        behavior: 'smooth',
+      });
+      setScrollTo(imageShown);
+    }
+  }
 
   return (
     <div
@@ -33,8 +46,18 @@ const ImageSilder = (props) => {
       onMouseOver={() => setShowScrolls(true)}
       onMouseLeave={() => { setShowScrolls(false); }}
     >
-      <div className="image-slider-video-wrap">
-        <img src={imagesArray[imageShown]} alt="" className="my_store_image" />
+      <div className="image-slider-video-wrap" ref={imagesContainerRef}>
+        
+          {
+            imagesArray.map((image) => (
+              <div className='my_store_image-wrapp'>
+              <img src={image} alt="" className="my_store_image" />
+              </div>
+            ))
+          }
+        
+        
+        
       </div>
 
       {!freeze && imagesArray.length !== 1 ? (
@@ -66,16 +89,16 @@ const ImageSilder = (props) => {
         <></>
       )}
 
-      {!freeze && imagesArray.length !== 1 ? (
+      {!freeze && imagesArray.length > 1 ? (
         <div className={popUp ? 'image-sliders-dots-wrap popUp-dots' : 'image-sliders-dots-wrap'}>
           {imagesArray.map((image, id) => (
             <div
               className={
-                id === imageShown
+                id + 1=== imageShown
                   ? 'image-slider-dots current-dot'
                   : 'image-slider-dots'
               }
-              onClick={() => dispatch(setImageShown(id))}
+              onClick={() => dispatch(setImageShown(id + 1))}
               key={image}
             />
           ))}
