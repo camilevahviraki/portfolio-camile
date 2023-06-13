@@ -253,7 +253,7 @@
 
 .project-next-button {
   position: absolute;
-  top: calc(53% - 20px);
+  top: calc(65% - 20px);
   border: 2px solid #ff7700b8;
   background-color: transparent;
   height: 40px;

@@ -5,7 +5,7 @@ import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
-// import RecentProject from '../recent_projects/RecentProject';
+import RecentProject from '../recent_projects/RecentProject';
 import './projects.css';
 
 const Projects = () => {
@@ -131,7 +131,7 @@ const Projects = () => {
 
   return (
     <div className="projects_container" id="projects" ref={ref1}>
-      {/* <RecentProject/> */}
+      <RecentProject/>
       <div className="project-back-blur" />
       <h2 className="my-projects-title">
         {
