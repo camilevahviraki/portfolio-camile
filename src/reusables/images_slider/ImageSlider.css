@@ -16,8 +16,7 @@
 .image-slider-buttons-wrapper div {
   position: relative;
   width: 100%;
-  margin-top: 50%;
-  height: 50%;
+  height: 100%;
 }
 
 .my_store_image-wrapp {
@@ -98,4 +97,6 @@
   align-items: center;
   position: absolute;
   bottom: 10px;
+  justify-content: center;
+  width: 100%;
 }
