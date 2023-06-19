@@ -6,7 +6,9 @@ import './ImageSlider.css';
 const ImageSilder = (props) => {
   const dispatch = useDispatch();
   const imagesContainerRef = useRef(null);
-  const { imagesArray, freeze, popUp, scroll } = props;
+  const {
+    imagesArray, freeze, popUp, scroll,
+  } = props;
   const [scrollButtons, setShowScrolls] = useState(false);
   const [imageShown, setImageShown] = useState(1);
   const [containerWidth, setContainerWidth] = useState(null);
@@ -60,7 +62,7 @@ const ImageSilder = (props) => {
 
       {!freeze && imagesArray.length !== 1 ? (
         <>
-          {scrollButtons || scroll? (
+          {scrollButtons || scroll ? (
             <>
               <div className={popUp ? 'image-slider-buttons-wrapper popUp-dots' : 'image-slider-buttons-wrapper'}>
                 <div>

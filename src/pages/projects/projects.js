@@ -132,7 +132,7 @@ const Projects = () => {
   return (
     <div className="projects_container" id="projects" ref={ref1}>
       <RecentProject />
-      <div className='last-projects-container'>
+      <div className="last-projects-container">
         <div className="project-back-blur" />
         <h2 className="my-projects-title">
           {
@@ -185,18 +185,18 @@ const Projects = () => {
           </div>
         </div>
         <div className="image-sliders-dots-wrap" ref={ref2}>
-        {projectsLis.map((image, id) => (
-          <div
-            className={
+          {projectsLis.map((image, id) => (
+            <div
+              className={
               id + 1 === activekey
                 ? 'image-slider-dots current-dot'
                 : 'image-slider-dots'
             }
-            onClick={() => setActiveKey(id + 1)}
-            key={image}
-          />
-        ))}
-      </div>
+              onClick={() => setActiveKey(id + 1)}
+              key={image}
+            />
+          ))}
+        </div>
       </div>
       <div className="projects-wrapper-mobile">
         {
@@ -211,9 +211,6 @@ const Projects = () => {
           ))
         }
       </div>
-
-
-
 
     </div>
   );
