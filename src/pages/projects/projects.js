@@ -5,7 +5,7 @@ import Project from './project';
 import { setPageInView } from '../../redux/componetInView';
 import useIsInViewport from '../../reusables/checkInViewwPort/checkInViewPort';
 import projectsList from '../../data/projects_list';
-// import RecentProject from '../recent_projects/RecentProject';
+import RecentProject from '../recent_projects/RecentProject';
 import './projects.css';
 
 const Projects = () => {
@@ -73,7 +73,7 @@ const Projects = () => {
     setStartX(event.clientX);
   };
 
-  const handleDrag = () => {};
+  const handleDrag = () => { };
   //   // const dragged = event.clientX - startX;
   //   // const absDragged = Math.sqrt(dragged * dragged);
   //   // if (dragged < 1 && dragged >= -50) {
@@ -131,36 +131,72 @@ const Projects = () => {
 
   return (
     <div className="projects_container" id="projects" ref={ref1}>
-      {/* <RecentProject/> */}
-      <div className="project-back-blur" />
-      <h2 className="my-projects-title">
-        {
-        language.languageKey === 0 ? 'My Projects' : 'Mes Projets'
-      }
-      </h2>
-      <div
-        onDragStart={handleDragStart}
-        onDrag={handleDrag}
-        onDragEnd={handleDragEnd}
-        className="project-wrapp-slider"
-      >
-        <div className="projects-lister" ref={imagesContainerRef}>
+      <RecentProject />
+      <div className="last-projects-container">
+        <div className="project-back-blur" />
+        <h2 className="my-projects-title">
           {
-          projectsLis.map((project, key) => (
-            <Project
-              project={project}
-              classComponent={assignClass(key + 1)}
-              key={project.name}
-              style={{
-                height: '100%',
-                // left: `${position}`,
-              }}
-              languageKey={language.languageKey}
-            />
-          ))
-        }
-        </div>
+            language.languageKey === 0 ? 'My Projects' : 'Mes Projets'
+          }
+        </h2>
+        <div
+          onDragStart={handleDragStart}
+          onDrag={handleDrag}
+          onDragEnd={handleDragEnd}
+          className="project-wrapp-slider"
+        >
 
+          <div className="projects-lister" ref={imagesContainerRef}>
+            {
+              projectsLis.map((project, key) => (
+                <Project
+                  project={project}
+                  classComponent={assignClass(key + 1)}
+                  key={project.name}
+                  style={{
+                    height: '100%',
+                    // left: `${position}`,
+                  }}
+                  languageKey={language.languageKey}
+                />
+              ))
+            }
+          </div>
+
+        </div>
+        <div className="image-slider-buttons-wrapper">
+          <div>
+            <button
+              className={activekey === 1
+                ? 'project-next-button previous-project locked'
+                : 'project-next-button previous-project'}
+              onClick={handlePreviousCard}
+            >
+              <FaAngleLeft />
+            </button>
+            <button
+              className={activekey === projectsLis.length
+                ? 'project-next-button next-project locked'
+                : 'project-next-button next-project'}
+              onClick={handleNextCard}
+            >
+              <FaAngleRight />
+            </button>
+          </div>
+        </div>
+        <div className="image-sliders-dots-wrap" ref={ref2}>
+          {projectsLis.map((image, id) => (
+            <div
+              className={
+              id + 1 === activekey
+                ? 'image-slider-dots current-dot'
+                : 'image-slider-dots'
+            }
+              onClick={() => setActiveKey(id + 1)}
+              key={image}
+            />
+          ))}
+        </div>
       </div>
       <div className="projects-wrapper-mobile">
         {
@@ -176,40 +212,6 @@ const Projects = () => {
         }
       </div>
 
-      <div className="image-slider-buttons-wrapper">
-        <div>
-          <button
-            className={activekey === 1
-              ? 'project-next-button previous-project locked'
-              : 'project-next-button previous-project'}
-            onClick={handlePreviousCard}
-          >
-            <FaAngleLeft />
-          </button>
-          <button
-            className={activekey === projectsLis.length
-              ? 'project-next-button next-project locked'
-              : 'project-next-button next-project'}
-            onClick={handleNextCard}
-          >
-            <FaAngleRight />
-          </button>
-        </div>
-      </div>
-
-      <div className="image-sliders-dots-wrap" ref={ref2}>
-        {projectsLis.map((image, id) => (
-          <div
-            className={
-              id + 1 === activekey
-                ? 'image-slider-dots current-dot'
-                : 'image-slider-dots'
-            }
-            onClick={() => setActiveKey(id + 1)}
-            key={image}
-          />
-        ))}
-      </div>
     </div>
   );
 };

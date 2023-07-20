@@ -97,4 +97,6 @@
   align-items: center;
   position: absolute;
   bottom: 10px;
+  justify-content: center;
+  width: 100%;
 }

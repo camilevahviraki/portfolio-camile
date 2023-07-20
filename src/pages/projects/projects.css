@@ -18,6 +18,12 @@
   justify-content: center;
 }
 
+.last-projects-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
 .projects-lister {
   display: flex;
   align-items: center;
@@ -177,11 +183,12 @@
 
 .project-technology {
   margin-right: 10px;
-  padding: 8px;
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  color: #a3a3a3;
+padding: 8px;
+list-style-type: none;
+display: flex;
+align-items: center;
+color: #a3a3a3;
+font-size: calc(16 * 100vw /1440);
 }
 
 .dot {
@@ -253,7 +260,7 @@
 
 .project-next-button {
   position: absolute;
-  top: calc(53% - 20px);
+  top: calc(52% - 20px);
   border: 2px solid #ff7700b8;
   background-color: transparent;
   height: 40px;

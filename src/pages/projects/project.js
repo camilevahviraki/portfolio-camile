@@ -27,11 +27,6 @@ const Project = (props) => {
   return (
   // <div draggable className={`card-project ${classComponent}`} style={style}>
     <div draggable className="card-project">
-      {/* {classComponent !== 'activeCard' && classComponent !== '' ? (
-        // <div className="gray-shadow" />
-      ) : (
-        <></>
-      )} */}
       <div className="project-wrapper">
         <div className="project-dark-backround" />
         <div className="project-image-container">
