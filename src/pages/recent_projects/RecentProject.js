@@ -2,17 +2,19 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { FaGithub } from 'react-icons/fa';
 import { VscLiveShare } from 'react-icons/vsc';
-import oasis1 from '../../images/projects/oasis/oasis1.png';
-import oasis2 from '../../images/projects/oasis/oasis2.png';
+import oasis1 from '../../images/projects/oasis/oasis2.png';
 // import oasis3 from '../../images/projects/oasis/oasis3.png';
 // import oasis4 from '../../images/projects/oasis/oasis4.png';
 // import oasis5 from '../../images/projects/oasis/oasis5.png';
 // import oasis6 from '../../images/projects/oasis/oasis7.png';
-import oasis3 from '../../images/projects/oasis/o2.png';
-import oasis4 from '../../images/projects/oasis/o3.png';
-import oasis5 from '../../images/projects/oasis/o6.png';
-import oasis6 from '../../images/projects/oasis/o8.png';
-import oasis7 from '../../images/projects/oasis/o11.png';
+import oasis2 from '../../images/projects/oasis/o2.png';
+import oasis3 from '../../images/projects/oasis/o13.png';
+import oasis4 from '../../images/projects/oasis/o14.png';
+import oasis5 from '../../images/projects/oasis/o3.png';
+import oasis6 from '../../images/projects/oasis/o6.png';
+import oasis7 from '../../images/projects/oasis/o8.png';
+import oasis8 from '../../images/projects/oasis/o11.png';
+
 import ImageSilder from '../../reusables/images_slider/ImageSilder';
 import './RecentProject.css';
 
@@ -21,7 +23,7 @@ const RecentProject = () => {
   const data = {
     id: 1,
     project_name: 'Oasis App',
-    imgArray: [oasis1, oasis2, oasis3, oasis4, oasis5, oasis6, oasis7],
+    imgArray: [oasis1, oasis2, oasis3, oasis4, oasis5, oasis6, oasis7, oasis8],
     description:
       'An online store with all the tools you need to build, manage, n\
               and grow your business. Ecwid store in minutes with shipping, tax, payment, n\
