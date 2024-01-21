@@ -54,7 +54,7 @@ const projectsEnglish = () => (
         'Netlify',
         'Docker',
       ],
-      live_link: 'https://bike-shop-cmlx.netlify.app/',
+      live_link: 'https://bike-shop-updated.netlify.app/',
       project_link: 'https://github.com/camilevahviraki/bike-shop-backend',
     },
     {
