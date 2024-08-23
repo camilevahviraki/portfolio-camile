@@ -29,10 +29,6 @@ To get a local copy up and running follow these simple example steps.
 
 [Open the live demo](https://portfolio-camile.netlify.app/)
 
-### Heroku
-
-[Open the live demo](https://portfolio-camile.herokuapp.com/)
-
 ## Authors
 
 👤 **Author1**
